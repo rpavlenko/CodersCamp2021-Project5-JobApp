@@ -1,45 +1,39 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import Button from './ui/atoms/Button/Button';
+import { Container } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { ColorModeContext } from './themes/ColorModeContext';
+import IconButton from '@mui/material/IconButton';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <Container maxWidth="sm">
+        {theme.palette.mode} mode
+        <IconButton
+          sx={{ ml: 1 }}
+          onClick={colorMode.toggleColorMode}
+          color="inherit"
+        >
+          {theme.palette.mode === 'dark' ? (
+            <Brightness7Icon />
+          ) : (
+            <Brightness4Icon />
+          )}
+        </IconButton>
+        <header className="App-header">
+          <p>Hello Vite + React + MaterialUI!</p>
+          <Button variant={'contained'} color={'primary'} size={'large'}>
+            Text test
+          </Button>
+        </header>
+      </Container>
     </div>
   );
 }
-
-export default App;

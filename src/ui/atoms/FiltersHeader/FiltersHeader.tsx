@@ -15,9 +15,11 @@ export const FiltersHeader = (props: IProps) => {
   const handleClick = () => {
     setShowCategory((prevValue) => !prevValue);
   };
-  return <Card onClick={handleClick} sx={{ minWidth: 275,  borderRadius: 0, backgroundColor: showCategory ? '#eee' : '#fff' }}>
-    <CardActions >
-      {showCategory ? <RemoveCircleOutlinedIcon sx={{fontSize: '30px'}} /> : <AddCircleTwoToneIcon sx={{fontSize: '30px'}}/>}
+  return <Card onClick={handleClick}
+               sx={{ minWidth: 275, borderRadius: 0, backgroundColor: showCategory ? '#eee' : '#fff' }}>
+    <CardActions>
+      {showCategory ? <RemoveCircleOutlinedIcon sx={{ fontSize: '30px' }} /> :
+        <AddCircleTwoToneIcon sx={{ fontSize: '30px' }} />}
       <Typography marginLeft={1} fontSize={'small'}>
         {props.name}
       </Typography>

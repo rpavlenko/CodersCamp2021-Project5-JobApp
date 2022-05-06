@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { BaseButton } from './ui/atoms/Button/BaseButton';
 import { Container } from '@mui/material';
+import './index.css';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
-import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
+import { FiltersHeader } from './ui/atoms/FiltersHeader/FiltersHeader';
 import Header from './ui/organisms/Header';
 import './index.css';
 
@@ -16,6 +18,7 @@ export default function App() {
             Filtry
           </BaseButton>
           <FilterButton />
+          <FiltersHeader name={'Kategoria'}/>
         </header>
       </Container>
     </div>

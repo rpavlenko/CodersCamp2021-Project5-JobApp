@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Button from './ui/atoms/Button/Button';
+import { BaseButton } from './ui/atoms/Button/BaseButton';
 import { Container } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { ColorModeContext } from './themes/ColorModeContext';
@@ -7,19 +7,21 @@ import IconButton from '@mui/material/IconButton';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import './index.css';
+import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
+import { FilterButton } from './ui/atoms/Button/FilterButton';
 
 export default function App() {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <div className="App">
-      <Container maxWidth="sm">
+    <div className='App'>
+      <Container maxWidth='sm'>
         {theme.palette.mode} mode
         <IconButton
           sx={{ ml: 1 }}
           onClick={colorMode.toggleColorMode}
-          color="inherit"
+          color='inherit'
         >
           {theme.palette.mode === 'dark' ? (
             <Brightness7Icon />
@@ -27,11 +29,14 @@ export default function App() {
             <Brightness4Icon />
           )}
         </IconButton>
-        <header className="App-header">
+        <header className='App-header'>
           <p>Hello Vite + React + MaterialUI!</p>
-          <Button variant={'contained'} color={'primary'} size={'large'}>
-            Text test
-          </Button>
+          <BaseButton
+            variant={'outlined'} color={'primary'} size={'large'}
+            >
+            Filtry
+          </BaseButton>
+          <FilterButton />
         </header>
       </Container>
     </div>

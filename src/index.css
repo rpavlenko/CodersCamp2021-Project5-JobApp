@@ -5,8 +5,10 @@
 }
 
 body {
+  min-width: 320px;
   min-height: 100vh;
-  font-family: 'Baloo 2', sans-serif;
+  padding-top: 100px;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: #6a5f5f;
 }
@@ -36,4 +38,5 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+  margin-bottom: 0;
 }

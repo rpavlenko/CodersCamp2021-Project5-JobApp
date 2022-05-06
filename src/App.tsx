@@ -7,8 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import './index.css';
-import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
+import { FiltersHeader } from './ui/atoms/FiltersHeader/FiltersHeader';
 
 export default function App() {
   const theme = useTheme();
@@ -37,6 +37,7 @@ export default function App() {
             Filtry
           </BaseButton>
           <FilterButton />
+          <FiltersHeader name={'Kategoria'}/>
         </header>
       </Container>
     </div>

@@ -1,9 +1,7 @@
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import { BaseButton } from './BaseButton';
 
-
 export const FilterButton = () => {
-
   return (
     <BaseButton
       variant={'outlined'}
@@ -20,7 +18,7 @@ export const FilterButton = () => {
           backgroundColor: 'black',
           color: '#ddd',
           borderColor: '#ddd',
-        },
+        }
       }}>
       Filtry
     </BaseButton>

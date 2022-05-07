@@ -8,9 +8,11 @@ interface IButton {
   startIcon?: React.ReactNode
   sx?: Record<string, unknown>
   fullWidth?: boolean
+  onClick?: () => void
 }
 
-export const BaseButton = ({ children, variant, color, size, startIcon, sx, fullWidth}: IButton) => {
+
+export const BaseButton = ({ children, variant, color, size, startIcon, sx, fullWidth, onClick}: IButton) => {
 
   return (
     <Button
@@ -20,6 +22,7 @@ export const BaseButton = ({ children, variant, color, size, startIcon, sx, full
       startIcon={startIcon}
       sx={sx}
       fullWidth={fullWidth}
+      onClick={onClick}
     >
       {children}
     </Button>

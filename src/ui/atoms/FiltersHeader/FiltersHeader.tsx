@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 
 interface IProps {
-  name: string
+  category: string
 }
 
 export const FiltersHeader = (props: IProps) => {
@@ -15,13 +15,13 @@ export const FiltersHeader = (props: IProps) => {
   const handleClick = () => {
     setShowCategory((prevValue) => !prevValue);
   };
-  return <Card onClick={handleClick}
-               sx={{ minWidth: 275, borderRadius: 0, backgroundColor: showCategory ? '#eee' : '#fff' }}>
+  return <Card variant="outlined" onClick={handleClick}
+               sx={{ minWidth: 275, borderRadius: 0, border: '#ddd' , marginTop: '10px',  backgroundColor: showCategory ? '#eee' : '#fff' }}>
     <CardActions>
       {showCategory ? <RemoveCircleOutlinedIcon sx={{ fontSize: '30px' }} /> :
         <AddCircleTwoToneIcon sx={{ fontSize: '30px' }} />}
       <Typography marginLeft={1} fontSize={'small'}>
-        {props.name}
+        {props.category}
       </Typography>
     </CardActions>
   </Card>

@@ -17,7 +17,7 @@ export default function App() {
       companyTitle: 'Devire',
       buttonTitle: '10000-15000 zł',
       languageTitle: 'javascript',
-      logo: logo,
+      logo: '../src/assets/companyLogo.jpg',
     },
     {
       id: 2,

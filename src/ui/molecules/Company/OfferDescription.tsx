@@ -28,7 +28,7 @@ export const OfferDescription = ({
         alignItems: 'flex-start',
         width: '100%',
         marginLeft: '10px',
-        '@media (min-width: 500px)': {
+        '@media (min-width: 680px)': {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -39,6 +39,7 @@ export const OfferDescription = ({
         sx={{
           display: 'flex',
           flexDirection: 'column',
+          minWidth: '200px',
         }}
       >
         <JobTitle title={jobTitle} />
@@ -49,6 +50,11 @@ export const OfferDescription = ({
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
+          marginLeft: '200px',
+          minWidth: '150px',
+          '@media (max-width: 850px)': {
+            marginLeft: '0px',
+          },
         }}
       >
         <SalaryButton variant={'outlined'} color={'primary'} size={'small'}>
@@ -64,8 +70,9 @@ export const OfferDescription = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          '@media (min-width: 500px)': {
-            width: 'auto',
+          '@media (min-width: 680px)': {
+            marginLeft: 'auto',
+            width: '125px',
           },
         }}
       >

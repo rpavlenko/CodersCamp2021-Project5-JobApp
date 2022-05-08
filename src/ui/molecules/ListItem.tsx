@@ -1,7 +1,6 @@
 import { OfferDescription } from './Company/OfferDescription';
 import { Paper } from '@mui/material';
 
-import companyLogo from '../../assets/companyLogo.jpg';
 import { CompanyLogo } from '../atoms/CompanyLogo/CompanyLogo';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 
@@ -11,6 +10,7 @@ interface IListItem {
   companyTitle: string;
   buttonTitle: string;
   languageTitle: string;
+  logo: string;
 }
 
 export const ListItem = ({
@@ -19,6 +19,7 @@ export const ListItem = ({
   companyTitle,
   buttonTitle,
   languageTitle,
+  logo,
 }: IListItem) => {
   return (
     <Paper
@@ -27,17 +28,18 @@ export const ListItem = ({
         flexDirection: 'row',
         alignItems: 'center',
         padding: '10px',
+        marginBottom: '2px',
         ':hover': {
           cursor: 'pointer',
           transition: 'all 0.5s',
-          boxShadow: '0 4px 2px -2px #ff5722',
+          boxShadow: '0px 2px 2px #ff5722',
         },
       }}
       component={'a'}
     >
       <CompanyLogo
         className={'className'}
-        src={companyLogo}
+        src={`${logo}`}
         alt="company name alt"
         width={60}
         height={34}

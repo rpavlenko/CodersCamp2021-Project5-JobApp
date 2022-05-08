@@ -17,7 +17,7 @@ export default function App() {
       companyTitle: 'Devire',
       buttonTitle: '10000-15000 zł',
       languageTitle: 'javascript',
-      logo: '../src/assets/companyLogo.jpg?raw',
+      logo: logo,
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export default function App() {
       companyTitle: 'SoftServe',
       buttonTitle: '5000-10000 zł',
       languageTitle: 'java',
-      logo: logo,
+      logo: 'https://static.nofluffjobs.com/companies/logos/original/softserve_20220328_140653_20220328_165558.webp',
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export default function App() {
       companyTitle: 'Netguru',
       buttonTitle: '7000-10000 zł',
       languageTitle: 'python',
-      logo: logo,
+      logo: 'https://nofluffjobs.com/upload/listing/Netguru_20161004_141842.png',
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ export default function App() {
       companyTitle: 'LiveChat',
       buttonTitle: '7000-10000 zł',
       languageTitle: 'node',
-      logo: logo,
+      logo: 'https://static.nofluffjobs.com/companies/logos/original/logo_rgb_orange_20220420_142843.png',
     },
   ];
 

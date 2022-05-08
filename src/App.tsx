@@ -6,6 +6,7 @@ import { FiltersHeader } from './ui/atoms/FiltersHeader/FiltersHeader';
 import Header from './ui/organisms/Header';
 import { OffersList } from './ui/organisms/OffersList';
 import logo from './assets/companyLogo.jpg';
+import { Routes, Route } from 'react-router-dom';
 import './index.css';
 
 export default function App() {
@@ -51,6 +52,11 @@ export default function App() {
   return (
     <div className="App">
       <Header />
+
+      <Routes>
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
+
       <Container maxWidth="lg">
         <header className="App-header">
           <p>Hello Vite + React + MaterialUI!</p>

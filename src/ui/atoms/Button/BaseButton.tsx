@@ -1,17 +1,24 @@
 import { Button } from '@mui/material';
 
-interface IButton {
+export interface IButton {
   children: React.ReactNode;
-  variant: 'outlined' | "contained";
+  variant: 'outlined' | 'contained';
   color?: 'primary';
   size: 'small' | 'medium' | 'large';
-  startIcon?: React.ReactNode
-  sx?: Record<string, unknown>
-  fullWidth?: boolean
+  startIcon?: React.ReactNode;
+  sx?: Record<string, unknown>;
+  fullWidth?: boolean;
 }
 
-export const BaseButton = ({ children, variant, color, size, startIcon, sx, fullWidth}: IButton) => {
-
+export const BaseButton = ({
+  children,
+  variant,
+  color,
+  size,
+  startIcon,
+  sx,
+  fullWidth,
+}: IButton) => {
   return (
     <Button
       variant={variant}

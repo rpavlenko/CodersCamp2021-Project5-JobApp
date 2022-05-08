@@ -6,12 +6,13 @@ import { FilterButton } from './ui/atoms/Button/FilterButton';
 import { FiltersHeader } from './ui/atoms/FiltersHeader/FiltersHeader';
 import Header from './ui/organisms/Header';
 import './index.css';
+import { ListItem } from './ui/molecules/ListItem';
 
 export default function App() {
   return (
     <div className="App">
       <Header />
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
         <header className="App-header">
           <p>Hello Vite + React + MaterialUI!</p>
           <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
@@ -20,6 +21,13 @@ export default function App() {
           <FilterButton />
           <FiltersHeader name={'Kategoria'}/>
         </header>
+        <ListItem
+          jobType={'Zdalna'}
+          jobTitle={'Junior Developer'}
+          companyTitle={'Devire'}
+          buttonTitle={'10000-15000 zł'}
+          languageTitle={'javascript'}
+        />
       </Container>
     </div>
   );

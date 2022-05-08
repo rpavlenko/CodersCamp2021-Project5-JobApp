@@ -5,6 +5,7 @@ import { FilterButton } from './ui/atoms/Button/FilterButton';
 import { FiltersHeader } from './ui/atoms/FiltersHeader/FiltersHeader';
 import Header from './ui/organisms/Header';
 import { OffersList } from './ui/organisms/OffersList';
+import logo from './assets/companyLogo.jpg';
 import './index.css';
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
       companyTitle: 'Devire',
       buttonTitle: '10000-15000 zł',
       languageTitle: 'javascript',
-      logo: 'src/assets/companyLogo.jpg',
+      logo: logo,
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ export default function App() {
       companyTitle: 'SoftServe',
       buttonTitle: '5000-10000 zł',
       languageTitle: 'java',
-      logo: 'src/assets/companyLogo.jpg',
+      logo: logo,
     },
     {
       id: 3,
@@ -34,7 +35,7 @@ export default function App() {
       companyTitle: 'Netguru',
       buttonTitle: '7000-10000 zł',
       languageTitle: 'python',
-      logo: 'src/assets/companyLogo.jpg',
+      logo: logo,
     },
     {
       id: 4,
@@ -43,7 +44,7 @@ export default function App() {
       companyTitle: 'LiveChat',
       buttonTitle: '7000-10000 zł',
       languageTitle: 'node',
-      logo: 'src/assets/companyLogo.jpg',
+      logo: logo,
     },
   ];
 

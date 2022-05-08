@@ -1,5 +1,6 @@
 import { FiltersHeader } from '../atoms/FiltersHeader/FiltersHeader';
 import { OptionsForFilterList } from '../molecules/OptionsForFilterList';
+import { Accordion, AccordionDetails, AccordionSummary, styled } from '@mui/material';
 
 interface IProps {
   item: {
@@ -11,11 +12,18 @@ interface IProps {
 
 export const FilterSection = (props: IProps) => {
   const { item } = props;
-  const {category, options } = item;
+  const { category, options } = item;
+
   return (
     <>
-      <FiltersHeader category={category} />
-      <OptionsForFilterList options={options} />
+      <Accordion>
+        <AccordionSummary sx={{ padding: '0px', height: '30px', backgroundColor: '#eee' }}>
+          <FiltersHeader category={category} />
+        </AccordionSummary>
+        <AccordionDetails>
+          <OptionsForFilterList options={options} />
+        </AccordionDetails>
+      </Accordion>
     </>
   );
 };

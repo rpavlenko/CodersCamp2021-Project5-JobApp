@@ -23,7 +23,7 @@ export const SingleFilterButton = (props: IProps) => {
         color: selected ?'red' : '#ddd',
         borderColor: selected ? 'red' : '#ddd',
         textTransform: 'none',
-        marginTop: '15px',
+        mt: '10px',
         mr: 1,
       }}>
       {name}

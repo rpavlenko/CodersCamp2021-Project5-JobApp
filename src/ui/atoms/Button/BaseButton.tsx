@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 export interface IButton {
   children: React.ReactNode;
   variant: 'outlined' | 'contained';
-  color: 'primary';
+  color?: 'primary';
   size: 'small' | 'medium' | 'large';
   startIcon?: React.ReactNode;
   sx?: Record<string, unknown>;

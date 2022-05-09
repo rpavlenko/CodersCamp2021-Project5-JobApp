@@ -30,7 +30,7 @@ export const FiltersHeader = (props: IProps) => {
         <Typography marginLeft={1} fontSize={'medium'}>
           {props.category}
         </Typography>
-        {showCategory
+        {props.numberCategories > 0
           ? <Avatar sx={{
             width: 20,
             height: 20,

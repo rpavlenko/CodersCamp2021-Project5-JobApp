@@ -1,13 +1,22 @@
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import { BaseButton } from './BaseButton';
 
-export const FilterButton = () => {
+interface IProps {
+  onClick: () => void
+}
+
+export const FilterButton = (props: IProps) => {
+ const handleClick = () => {
+   props.onClick();
+  }
+
   return (
     <BaseButton
       variant={'outlined'}
       size={'large'}
       startIcon={<FilterListOutlinedIcon />}
       fullWidth={true}
+      onClick={handleClick}
       sx={{
         backgroundColor: 'black',
         color: '#ddd',
@@ -23,5 +32,6 @@ export const FilterButton = () => {
       Filtry
     </BaseButton>
   );
-};
+}
+;
 

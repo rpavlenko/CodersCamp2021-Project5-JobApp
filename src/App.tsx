@@ -1,12 +1,12 @@
 import { BaseButton } from './ui/atoms/Button/BaseButton';
-import { Container } from '@mui/material';
+import { Container, Modal } from '@mui/material';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
 import Header from './ui/organisms/Header';
 import { OffersList } from './ui/organisms/OffersList';
 import logo from './assets/companyLogo.jpg';
 import './index.css';
-import { FilterSection } from './ui/organisms/FilterSection';
-import { ShowScoreButton } from './ui/atoms/Button/ShowScoreButton';
+import { FilterPage } from './ui/Pages/FilterPage';
+import { useState } from 'react';
 
 export default function App() {
   const data = [{
@@ -121,6 +121,9 @@ export default function App() {
       logo: 'https://static.nofluffjobs.com/companies/logos/original/logo_rgb_orange_20220420_142843.png',
     },
   ];
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpenPopup(false);
 
   return (
     <div className='App'>
@@ -130,15 +133,14 @@ export default function App() {
           <p>Hello Vite + React + MaterialUI!</p>
         </header>
         <OffersList offers={offersData} />
-        <ShowScoreButton/>
-        <FilterButton />
+        <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
+          Filtry
+        </BaseButton>
+        <FilterButton onClick={handleOpen} />
       </Container>
-      <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
-        Filtry
-      </BaseButton>
-      {data.map((item) => {
-        return <FilterSection item={item} />;
-      })}
+      <Modal open={open}>
+        <FilterPage data={data}  />
+      </Modal>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { OffersList } from './ui/organisms/OffersList';
 import logo from './assets/companyLogo.jpg';
 import './index.css';
 import { FilterSection } from './ui/organisms/FilterSection';
+import { ShowScoreButton } from './ui/atoms/Button/ShowScoreButton';
 
 export default function App() {
   const data = [{
@@ -127,14 +128,14 @@ export default function App() {
       <Container maxWidth='lg'>
         <header className='App-header'>
           <p>Hello Vite + React + MaterialUI!</p>
-
         </header>
         <OffersList offers={offersData} />
+        <ShowScoreButton/>
+        <FilterButton />
       </Container>
       <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
         Filtry
       </BaseButton>
-      <FilterButton />
       {data.map((item) => {
         return <FilterSection item={item} />;
       })}

@@ -28,19 +28,19 @@ export default function App() {
       },
       {
         id: 5,
-        name: 'java',
+        name: 'node',
       },
       {
         id: 6,
-        name: 'angular',
+        name: 'c#',
       },
       {
         id: 7,
-        name: 'react',
+        name: 'c',
       },
       {
         id: 8,
-        name: 'php',
+        name: 'c++',
       }],
   },
     {
@@ -84,18 +84,19 @@ export default function App() {
   return (
     <div className='App'>
       <Header />
-      {/*<Container maxWidth='sm'>*/}
+      <Container maxWidth='sm'>
         <header className='App-header'>
           <p>Hello Vite + React + MaterialUI!</p>
-          <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
-            Filtry
-          </BaseButton>
-          <FilterButton />
-          {data.map((item) => {
-            return <FilterSection item={item} />;
-          })}
+
         </header>
-      {/*</Container>*/}
+      </Container>
+      <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
+        Filtry
+      </BaseButton>
+      <FilterButton />
+      {data.map((item) => {
+        return <FilterSection item={item} />;
+      })}
     </div>
   );
 }

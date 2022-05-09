@@ -1,6 +1,7 @@
 import { FiltersHeader } from '../atoms/FiltersHeader/FiltersHeader';
 import { OptionsForFilterList } from '../molecules/OptionsForFilterList';
-import { Accordion, AccordionDetails, AccordionSummary, styled } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import { useState } from 'react';
 
 interface IProps {
   item: {
@@ -13,15 +14,23 @@ interface IProps {
 export const FilterSection = (props: IProps) => {
   const { item } = props;
   const { category, options } = item;
+  const [chosenArray, setChosenArray] = useState<number[]>([]);
+  const handleAddToArray = (id: number) => {
+    if (chosenArray.includes(id)) {
+      setChosenArray((prevValue) => prevValue.filter((item: number) => id !== item));
+      return;
+    }
+    setChosenArray((prevValue) => [...prevValue, id]);
+  };
 
   return (
     <>
       <Accordion>
         <AccordionSummary sx={{ padding: '0px', height: '30px', backgroundColor: '#eee' }}>
-          <FiltersHeader category={category} />
+          <FiltersHeader category={category} numberCategories={chosenArray.length} />
         </AccordionSummary>
         <AccordionDetails>
-          <OptionsForFilterList options={options} />
+          <OptionsForFilterList options={options} onButtonClick={handleAddToArray} />
         </AccordionDetails>
       </Accordion>
     </>

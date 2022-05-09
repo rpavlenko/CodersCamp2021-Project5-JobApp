@@ -3,14 +3,17 @@ import { useState } from 'react';
 
 interface IProps {
   item: { id: number, name: string }
+  onButtonClick: (id: number) => void
 }
 
 export const SingleFilterButton = (props: IProps) => {
-  const { name } = props.item;
+  const { id, name } = props.item;
+  const { onButtonClick } = props
   const [selected, setSelected] = useState<boolean>(false);
 
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
+    onButtonClick(id)
   };
 
   return (

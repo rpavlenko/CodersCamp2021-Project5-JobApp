@@ -4,9 +4,11 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
+import Avatar from '@mui/material/Avatar';
 
 interface IProps {
   category: string
+  numberCategories: number
 }
 
 export const FiltersHeader = (props: IProps) => {
@@ -28,6 +30,18 @@ export const FiltersHeader = (props: IProps) => {
         <Typography marginLeft={1} fontSize={'medium'}>
           {props.category}
         </Typography>
+        {showCategory
+          ? <Avatar sx={{
+            width: 20,
+            height: 20,
+            fontSize: '12px',
+            backgroundColor: '#64b7f1',
+            color: 'white',
+            marginLeft: '10px',
+          }}>
+            {props.numberCategories}
+          </Avatar>
+          : null}
       </CardActions>
     </Card>
   );

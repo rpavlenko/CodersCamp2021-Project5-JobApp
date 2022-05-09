@@ -15,10 +15,14 @@ interface IProps {
 export const FilterPage = (props: IProps) => {
   return (
     <Box sx={{ margin: '0px', backgroundColor: 'white', height: '100vh' }}>
-      <FilterTitle />
-      {props.data.map((item) => {
-        return <FilterSection item={item} />;
-      })}
+      <AppBar position='fixed' >
+        <FilterTitle />
+      </AppBar>
+      <Box sx={{ paddingTop: '72px', paddingBottom: '82px' }}>
+        {props.data.map((item) => {
+          return <FilterSection item={item} />;
+        })}
+      </Box>
       <AppBar position='fixed' sx={{ top: 'auto', bottom: 0 }}>
         <Container maxWidth='lg'>
           <ShowScoreButton />

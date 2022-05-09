@@ -80,6 +80,111 @@ export default function App() {
           id: 8,
           name: 'Kraków',
         }],
+    }, {
+      id: 3,
+      category: 'Lokalizacja',
+      options: [
+        {
+          id: 1,
+          name: 'Warszawa',
+        }, {
+          id: 2,
+          name: 'Lublin',
+        },
+        {
+          id: 3,
+          name: 'Białystok',
+        },
+        {
+          id: 4,
+          name: 'Wrocław',
+        },
+        {
+          id: 5,
+          name: 'Łódź',
+        },
+        {
+          id: 6,
+          name: 'Zakopane',
+        },
+        {
+          id: 7,
+          name: 'Gdańsk',
+        },
+        {
+          id: 8,
+          name: 'Kraków',
+        }],
+    }, {
+      id: 4,
+      category: 'Lokalizacja',
+      options: [
+        {
+          id: 1,
+          name: 'Warszawa',
+        }, {
+          id: 2,
+          name: 'Lublin',
+        },
+        {
+          id: 3,
+          name: 'Białystok',
+        },
+        {
+          id: 4,
+          name: 'Wrocław',
+        },
+        {
+          id: 5,
+          name: 'Łódź',
+        },
+        {
+          id: 6,
+          name: 'Zakopane',
+        },
+        {
+          id: 7,
+          name: 'Gdańsk',
+        },
+        {
+          id: 8,
+          name: 'Kraków',
+        }],
+    }, {
+      id: 5,
+      category: 'Lokalizacja',
+      options: [
+        {
+          id: 1,
+          name: 'Warszawa',
+        }, {
+          id: 2,
+          name: 'Lublin',
+        },
+        {
+          id: 3,
+          name: 'Białystok',
+        },
+        {
+          id: 4,
+          name: 'Wrocław',
+        },
+        {
+          id: 5,
+          name: 'Łódź',
+        },
+        {
+          id: 6,
+          name: 'Zakopane',
+        },
+        {
+          id: 7,
+          name: 'Gdańsk',
+        },
+        {
+          id: 8,
+          name: 'Kraków',
+        }],
     }];
 
 
@@ -138,7 +243,7 @@ export default function App() {
         </BaseButton>
         <FilterButton onClick={handleOpen} />
       </Container>
-      <Modal open={open}>
+      <Modal open={open} sx={{overflow:'scroll'}}>
         <FilterPage data={data}  />
       </Modal>
     </div>

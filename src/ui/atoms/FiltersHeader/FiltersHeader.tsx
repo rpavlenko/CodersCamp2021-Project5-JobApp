@@ -35,7 +35,7 @@ export const FiltersHeader = (props: IProps) => {
             width: 20,
             height: 20,
             fontSize: '12px',
-            backgroundColor: '#64b7f1',
+            backgroundColor: '#1271ed',
             color: 'white',
             marginLeft: '10px',
           }}>

@@ -25,19 +25,19 @@ export const FilterSection = (props: IProps) => {
 
   return (
     <>
-        <Accordion sx={{
-          // EDGE CASE - DO NOT TOUCH
-          '&.Mui-expanded': {
-            margin: 0
-          }
-        }}>
-          <AccordionSummary sx={{ padding: '0px', height: '30px', backgroundColor: '#eee' }}>
-            <FiltersHeader category={category} numberCategories={chosenArray.length} />
-          </AccordionSummary>
-          <AccordionDetails>
-            <OptionsForFilterList options={options} onButtonClick={handleAddToArray} />
-          </AccordionDetails>
-        </Accordion>
+      <Accordion sx={{
+        // EDGE CASE - DO NOT TOUCH
+        '&.Mui-expanded': {
+          margin: 0,
+        },
+      }}>
+        <AccordionSummary sx={{ padding: '0px', height: '30px', backgroundColor: '#eee' }}>
+          <FiltersHeader category={category} numberCategories={chosenArray.length} />
+        </AccordionSummary>
+        <AccordionDetails>
+          <OptionsForFilterList options={options} onButtonClick={handleAddToArray} />
+        </AccordionDetails>
+      </Accordion>
     </>
   );
 };

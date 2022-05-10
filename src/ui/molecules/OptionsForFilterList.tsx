@@ -9,7 +9,7 @@ export const OptionsForFilterList = (props: IProps) => {
   const { options, onButtonClick } = props;
   return <>
     {options.map((item) => (
-        <SingleFilterButton item={item} onButtonClick={onButtonClick} />
+      <SingleFilterButton item={item} onButtonClick={onButtonClick} />
     ))}
   </>;
 };

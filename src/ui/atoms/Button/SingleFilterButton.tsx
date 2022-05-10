@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 interface IProps {
   item: { id: number, name: string }
-  onButtonClick: (id: number) => void
+  onButtonClick?: (id: number) => void
 }
 
 export const SingleFilterButton = (props: IProps) => {
@@ -13,7 +13,9 @@ export const SingleFilterButton = (props: IProps) => {
 
   const handleClick = () => {
     setSelected((prevValue) => !prevValue);
-    onButtonClick(id)
+    if (onButtonClick) {
+      onButtonClick(id);
+    }
   };
 
   return (

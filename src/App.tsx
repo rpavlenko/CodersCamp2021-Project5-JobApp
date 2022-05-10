@@ -9,185 +9,6 @@ import { FilterPage } from './ui/Pages/FilterPage';
 import { useState } from 'react';
 
 export default function App() {
-  const data = [{
-    id: 1,
-    category: 'Technologia',
-    options: [
-      {
-        id: 1,
-        name: 'java',
-      }, {
-        id: 2,
-        name: 'angular',
-      },
-      {
-        id: 3,
-        name: 'react',
-      },
-      {
-        id: 4,
-        name: 'php',
-      },
-      {
-        id: 5,
-        name: 'node',
-      },
-      {
-        id: 6,
-        name: 'c#',
-      },
-      {
-        id: 7,
-        name: 'c',
-      },
-      {
-        id: 8,
-        name: 'c++',
-      }],
-  },
-    {
-      id: 2,
-      category: 'Lokalizacja',
-      options: [
-        {
-          id: 1,
-          name: 'Warszawa',
-        }, {
-          id: 2,
-          name: 'Lublin',
-        },
-        {
-          id: 3,
-          name: 'Białystok',
-        },
-        {
-          id: 4,
-          name: 'Wrocław',
-        },
-        {
-          id: 5,
-          name: 'Łódź',
-        },
-        {
-          id: 6,
-          name: 'Zakopane',
-        },
-        {
-          id: 7,
-          name: 'Gdańsk',
-        },
-        {
-          id: 8,
-          name: 'Kraków',
-        }],
-    }, {
-      id: 3,
-      category: 'Lokalizacja',
-      options: [
-        {
-          id: 1,
-          name: 'Warszawa',
-        }, {
-          id: 2,
-          name: 'Lublin',
-        },
-        {
-          id: 3,
-          name: 'Białystok',
-        },
-        {
-          id: 4,
-          name: 'Wrocław',
-        },
-        {
-          id: 5,
-          name: 'Łódź',
-        },
-        {
-          id: 6,
-          name: 'Zakopane',
-        },
-        {
-          id: 7,
-          name: 'Gdańsk',
-        },
-        {
-          id: 8,
-          name: 'Kraków',
-        }],
-    }, {
-      id: 4,
-      category: 'Lokalizacja',
-      options: [
-        {
-          id: 1,
-          name: 'Warszawa',
-        }, {
-          id: 2,
-          name: 'Lublin',
-        },
-        {
-          id: 3,
-          name: 'Białystok',
-        },
-        {
-          id: 4,
-          name: 'Wrocław',
-        },
-        {
-          id: 5,
-          name: 'Łódź',
-        },
-        {
-          id: 6,
-          name: 'Zakopane',
-        },
-        {
-          id: 7,
-          name: 'Gdańsk',
-        },
-        {
-          id: 8,
-          name: 'Kraków',
-        }],
-    }, {
-      id: 5,
-      category: 'Lokalizacja',
-      options: [
-        {
-          id: 1,
-          name: 'Warszawa',
-        }, {
-          id: 2,
-          name: 'Lublin',
-        },
-        {
-          id: 3,
-          name: 'Białystok',
-        },
-        {
-          id: 4,
-          name: 'Wrocław',
-        },
-        {
-          id: 5,
-          name: 'Łódź',
-        },
-        {
-          id: 6,
-          name: 'Zakopane',
-        },
-        {
-          id: 7,
-          name: 'Gdańsk',
-        },
-        {
-          id: 8,
-          name: 'Kraków',
-        }],
-    }];
-
-
   const offersData = [
     {
       id: 1,
@@ -228,7 +49,7 @@ export default function App() {
   ];
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpenPopup(false);
+  const handleClose = () => setOpen(false);
 
   return (
     <div className='App'>
@@ -244,7 +65,7 @@ export default function App() {
         <FilterButton onClick={handleOpen} />
       </Container>
       <Modal open={open} sx={{overflow:'scroll'}}>
-        <FilterPage data={data}  />
+        <FilterPage onClose={handleClose}/>
       </Modal>
     </div>
   );

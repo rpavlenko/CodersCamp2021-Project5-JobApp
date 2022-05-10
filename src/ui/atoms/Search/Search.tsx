@@ -13,15 +13,14 @@ export default function CustomizedInputBase() {
         alignItems: 'center',
         width: 400,
         '&:hover': {
-          backgroundColor: '#ddd',
+          backgroundColor: '#eee',
         },
       }}
     >
-      <IconButton sx={{ p: '10px' }} aria-label="menu"></IconButton>
       <InputBase
         sx={{ ml: 1, flex: 1 }}
-        placeholder="Wpisz,aby wyszukać"
-        inputProps={{ 'aria-label': 'Wpisz,aby wyszukać' }}
+        placeholder="Wpisz, aby wyszukać"
+        inputProps={{ 'aria-label': 'Wpisz, aby wyszukać' }}
       />
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />

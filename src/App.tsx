@@ -7,7 +7,9 @@ import logo from './assets/companyLogo.jpg';
 import './index.css';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { useState } from 'react';
-import { DetailOfferDescription } from './ui/atoms/DetailOfferDescription/DetailOfferDescription';
+import { DetailOfferDescription } from './ui/molecules/DetailOfferDescription/DetailOfferDescription';
+import { CoreRequirements } from './ui/molecules/DetailOfferDescription/CoreRequirements';
+import { DailyTasks } from './ui/molecules/DetailOfferDescription/DailyTasks';
 
 export default function App() {
   const offersData = [
@@ -63,7 +65,9 @@ export default function App() {
         <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
           Filtry
         </BaseButton>
+        <CoreRequirements/>
         <DetailOfferDescription/>
+        <DailyTasks/>
         <FilterButton onClick={handleOpen} />
       </Container>
       <Modal open={open} sx={{overflow:'scroll'}}>

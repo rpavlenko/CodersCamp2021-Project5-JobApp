@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { SubheaderOfDescription } from './SubheaderOfDescription';
+import { SubheaderOfDescription } from '../../atoms/SubheaderOfDescription/SubheaderOfDescription';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
@@ -21,14 +21,14 @@ export const DetailOfferDescription = () => {
   const handleRead = () => setReadMore(prevState => !prevState);
 
   return (
-      <Box>
-        <SubheaderOfDescription />
-        <Typography sx={{ marginTop: '20px' }}>
-          {readMore ? offerDescription : `${offerDescription.substring(0, 200)}...`}
-        </Typography>
-        <Button onClick={handleRead} sx={{ textTransform: 'none' }}>
-          {readMore ? 'zwiń' : 'rozwiń'}
-        </Button>
-      </Box>
+    <Box>
+      <SubheaderOfDescription> Opis stanowiska </SubheaderOfDescription>
+      <Typography sx={{ marginTop: '20px' }}>
+        {readMore ? offerDescription : `${offerDescription.substring(0, 200)}...`}
+      </Typography>
+      <Button onClick={handleRead} sx={{ textTransform: 'none' }}>
+        {readMore ? 'zwiń' : 'rozwiń'}
+      </Button>
+    </Box>
   );
 };

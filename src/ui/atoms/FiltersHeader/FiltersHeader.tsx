@@ -22,7 +22,12 @@ export const FiltersHeader = (props: IProps) => {
       variant='outlined'
       onClick={handleClick}
       square
-      sx={{ width: 1, border: '#ddd', backgroundColor: showCategory ? '#eee' : '#fff', paddingLeft: '10px' }}>
+      sx={{
+        width: 1,
+        border: '#ddd',
+        backgroundColor: showCategory ? '#eee' : '#fff',
+        paddingLeft: '10px',
+      }}>
       <CardActions>
         {showCategory
           ? <RemoveCircleOutlinedIcon sx={{ fontSize: '30px' }} />

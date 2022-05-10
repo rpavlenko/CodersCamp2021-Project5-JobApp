@@ -7,6 +7,7 @@ import logo from './assets/companyLogo.jpg';
 import './index.css';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { useState } from 'react';
+import { DetailOfferDescription } from './ui/atoms/DetailOfferDescription/DetailOfferDescription';
 
 export default function App() {
   const offersData = [
@@ -62,6 +63,7 @@ export default function App() {
         <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
           Filtry
         </BaseButton>
+        <DetailOfferDescription/>
         <FilterButton onClick={handleOpen} />
       </Container>
       <Modal open={open} sx={{overflow:'scroll'}}>

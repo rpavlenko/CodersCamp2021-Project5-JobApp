@@ -22,7 +22,7 @@ import logo from '../../assets/logo.svg';
 const pages = ['Oferty pracy', 'Dla pracodawcy', 'Blog'];
 const settings = ['Profil', 'Ustawienia', 'Logout'];
 
-const Header = () => {
+export const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
@@ -176,4 +176,3 @@ const Header = () => {
     </AppBar>
   );
 };
-export default Header;

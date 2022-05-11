@@ -1,4 +1,5 @@
 import noImage from '../../../assets/No-image-available.png';
+import CSS from 'csstype';
 
 interface ICompanyLogo {
   src: string;
@@ -6,12 +7,7 @@ interface ICompanyLogo {
   width?: number;
   height?: number;
   className: string;
-  style?: {
-    border?: string;
-    width?: string;
-    height?: string;
-    objectFit?: string;
-  };
+  style?: React.CSSProperties;
 }
 
 export const CompanyLogo = ({

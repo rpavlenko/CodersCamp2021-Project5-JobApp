@@ -39,3 +39,110 @@ export const offersData = [
     logo: 'https://static.nofluffjobs.com/companies/logos/original/logo_rgb_orange_20220420_142843.png',
   },
 ];
+
+// endpoint get:  /api/v1/offers/:id
+export const offerData = {
+  id: 1,
+  date: '2022-01-01',
+  logo: 'https://static.nofluffjobs.com/companies/logos/original/softserve_20220328_140653_20220328_165558.webp',
+  jobTitle: 'Junior Developer',
+  jobType: 'Zdalna',
+  salary: '10000-15000 zł',
+  companyTitle: 'Devire',
+  languageTitle: 'javascript',
+  category: 'Javascript',
+  level: 'Junior',
+  languages: ['angielski', 'polski'],
+  offerDescription:
+    'We are Unikie- Finnish technology powerhouse.\n' +
+    '\n' +
+    'We develop technology for secure realtime processes and offer consulting for related demand. Our services meet at the heart of three global macro trends - IoE, 5G and AI.\n' +
+    'And yes, we have our own products and R&D.\n' +
+    '\n' +
+    'We are looking for Data Engineers with a strong background in engineering to our fast growing #UnikieAllStars team.\n' +
+    '\n' +
+    'The main responsibilities are:\n' +
+    '\n' +
+    '· Perform Data Engineering tasks required to analyse data from CDIT+D clusters. This includes setting-up data pipelines, storing data in our customer premises and transforming collected data to data structures optimized for efficient browsing\n' +
+    '· Execute testing, perform troubleshooting of delivered data pipelines',
+  dailyTasks: [
+    {
+      id: 1,
+      exercise:
+        'Tworzenie aplikacji w nowych i istniejących projektach oprogramowania w C# / Visual Studio',
+    },
+    {
+      id: 2,
+      exercise:
+        'Zapewnienie właściwej jakości wytwarzanego oprogramowania i zgodności ze standardami oraz dobrymi praktykami',
+    },
+    {
+      id: 3,
+      exercise: 'Praca z dokumentacją techniczną',
+    },
+    {
+      id: 4,
+      exercise: 'Udział w testach',
+    },
+  ],
+  coreRequirements: [
+    {
+      id: 1,
+      name: 'java',
+    },
+    {
+      id: 2,
+      name: 'angular',
+    },
+    {
+      id: 3,
+      name: 'react',
+    },
+    {
+      id: 4,
+      name: 'php',
+    },
+    {
+      id: 5,
+      name: 'node',
+    },
+    {
+      id: 6,
+      name: 'c#',
+    },
+    {
+      id: 7,
+      name: 'c',
+    },
+  ],
+  additionalRequirements: [
+    {
+      id: 1,
+      name: 'java',
+    },
+    {
+      id: 2,
+      name: 'angular',
+    },
+    {
+      id: 3,
+      name: 'react',
+    },
+    {
+      id: 4,
+      name: 'php',
+    },
+    {
+      id: 5,
+      name: 'node',
+    },
+    {
+      id: 6,
+      name: 'c#',
+    },
+    {
+      id: 7,
+      name: 'c',
+    },
+  ],
+};

@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { DetailOfferDescription } from './ui/molecules/DetailOfferDescription/DetailOfferDescription';
 import { CoreRequirements } from './ui/molecules/DetailOfferDescription/CoreRequirements';
 import { DailyTasks } from './ui/molecules/DetailOfferDescription/DailyTasks';
+import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
 
 export default function App() {
   const offersData = [
@@ -69,6 +70,7 @@ export default function App() {
         <DetailOfferDescription/>
         <DailyTasks/>
         <FilterButton onClick={handleOpen} />
+        <PersonalDataInformation/>
       </Container>
       <Modal open={open} sx={{overflow:'scroll'}}>
         <FilterPage onClose={handleClose}/>

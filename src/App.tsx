@@ -11,6 +11,7 @@ import { Header } from './ui/organisms/Header';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { Container, Modal } from '@mui/material';
 import './index.css';
+import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function App() {
         <DailyTasks />
         <FilterButton onClick={handleOpen} />
         <PersonalDataInformation/>
+        <BottomApplyFofAnOffer/>
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

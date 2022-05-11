@@ -1,8 +1,6 @@
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { SubheaderOfDescription } from '../../atoms/SubheaderOfDescription/SubheaderOfDescription';
-import Button from '@mui/material/Button';
-import { useState } from 'react';
+import { ReadMore } from '../ReadMore';
 
 const offerDescription = 'We are Unikie- Finnish technology powerhouse.\n' +
   '\n' +
@@ -17,18 +15,10 @@ const offerDescription = 'We are Unikie- Finnish technology powerhouse.\n' +
   '· Execute testing, perform troubleshooting of delivered data pipelines';
 
 export const DetailOfferDescription = () => {
-  const [readMore, setReadMore] = useState(false);
-  const handleRead = () => setReadMore(prevState => !prevState);
-
   return (
-    <Box>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <SubheaderOfDescription> Opis stanowiska </SubheaderOfDescription>
-      <Typography sx={{ marginTop: '20px' }}>
-        {readMore ? offerDescription : `${offerDescription.substring(0, 200)}...`}
-      </Typography>
-      <Button onClick={handleRead} sx={{ textTransform: 'none' }}>
-        {readMore ? 'zwiń' : 'rozwiń'}
-      </Button>
+      <ReadMore text={offerDescription} sx={{ marginTop: '20px' }} />
     </Box>
   );
 };

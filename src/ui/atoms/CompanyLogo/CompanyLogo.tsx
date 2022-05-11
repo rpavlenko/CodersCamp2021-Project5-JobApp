@@ -6,10 +6,11 @@ interface ICompanyLogo {
   width?: number;
   height?: number;
   className: string;
-  style: {
-    border: string;
-    width: string;
-    height: string;
+  style?: {
+    border?: string;
+    width?: string;
+    height?: string;
+    objectFit?: string;
   };
 }
 

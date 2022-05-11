@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { offersData } from './api/api';
-import { BaseButton } from './ui/atoms/Button/BaseButton';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
 import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
 import { OffersList } from './ui/organisms/OffersList';
-import logo from './assets/companyLogo.jpg';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './ui/organisms/Header';
 import { FilterPage } from './ui/Pages/FilterPage';
@@ -12,6 +10,7 @@ import { Container, Modal } from '@mui/material';
 import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
 import { SearchInput } from './ui/atoms/Search/Search';
 import { DetailHeader } from './ui/organisms/DetailHeader';
+import { BaseButton } from './ui/atoms/Button/BaseButton';
 import './index.css';
 
 export default function App() {
@@ -29,9 +28,6 @@ export default function App() {
 
       <Container maxWidth="lg">
         <OffersList offers={offersData} />
-        <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
-          Filtry
-        </BaseButton>
         <DetailHeader />
         <FilterButton onClick={handleOpen} />
         <PersonalDataInformation />

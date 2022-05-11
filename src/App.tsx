@@ -4,6 +4,8 @@ import { BaseButton } from './ui/atoms/Button/BaseButton';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
 import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
 import { OffersList } from './ui/organisms/OffersList';
+import logo from './assets/companyLogo.jpg';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './ui/organisms/Header';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { Container, Modal } from '@mui/material';
@@ -20,6 +22,11 @@ export default function App() {
   return (
     <div className="App">
       <Header />
+
+      <Routes>
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
+
       <Container maxWidth="lg">
         <OffersList offers={offersData} />
         <BaseButton variant={'outlined'} color={'primary'} size={'large'}>

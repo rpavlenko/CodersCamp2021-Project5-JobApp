@@ -5,13 +5,6 @@ import { FilterButton } from './ui/atoms/Button/FilterButton';
 import { DailyTasks } from './ui/molecules/DetailOfferDescription/DailyTasks';
 import { DetailOfferDescription } from './ui/molecules/DetailOfferDescription/DetailOfferDescription';
 import { CoreRequirements } from './ui/molecules/DetailOfferDescription/CoreRequirements';
-import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
-import { OffersList } from './ui/organisms/OffersList';
-import { Header } from './ui/organisms/Header';
-import { FilterPage } from './ui/Pages/FilterPage';
-import { Container, Modal } from '@mui/material';
-import './index.css';
-import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -33,8 +26,7 @@ export default function App() {
         <DetailOfferDescription />
         <DailyTasks />
         <FilterButton onClick={handleOpen} />
-        <PersonalDataInformation/>
-        <BottomApplyFofAnOffer/>
+
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

@@ -3,7 +3,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function CustomizedInputBase() {
+export const SearchInput = () => {
   return (
     <Paper
       component="form"
@@ -11,7 +11,9 @@ export default function CustomizedInputBase() {
         p: '2px 4px',
         display: 'flex',
         alignItems: 'center',
-        width: 400,
+        width: '100%vh',
+        marginTop: '30px',
+        marginBottom: '30px',
         '&:hover': {
           backgroundColor: '#eee',
         },

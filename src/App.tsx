@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { offersData } from './api/api';
-import { BaseButton } from './ui/atoms/Button/BaseButton';
 import { FilterButton } from './ui/atoms/Button/FilterButton';
-import { DailyTasks } from './ui/molecules/DetailOfferDescription/DailyTasks';
-import { DetailOfferDescription } from './ui/molecules/DetailOfferDescription/DetailOfferDescription';
-import { CoreRequirements } from './ui/molecules/DetailOfferDescription/CoreRequirements';
 import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
 import { OffersList } from './ui/organisms/OffersList';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './ui/organisms/Header';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { Container, Modal } from '@mui/material';
+import { SearchInput } from './ui/atoms/Search/Search';
 import './index.css';
-import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
+import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
 import { FormSection } from './ui/organisms/FormSection/FormSection';
 
 export default function App() {
@@ -20,22 +18,17 @@ export default function App() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
-      <Container maxWidth='lg'>
-        <header className='App-header'>
-          <p>Hello Vite + React + MaterialUI!</p>
-        </header>
+      <Routes>
+        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/detail/:id" element={<OfferDetailPage/>} />
+      </Routes>
+      <Container maxWidth="lg">
         <OffersList offers={offersData} />
-        <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
-          Filtry
-        </BaseButton>
-        <CoreRequirements />
-        <DetailOfferDescription />
-        <DailyTasks />
         <FilterButton onClick={handleOpen} />
+        <SearchInput />
         <PersonalDataInformation />
-        <BottomApplyFofAnOffer />
         <FormSection />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>

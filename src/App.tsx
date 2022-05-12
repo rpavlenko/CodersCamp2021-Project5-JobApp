@@ -10,6 +10,7 @@ import { Container, Modal } from '@mui/material';
 import { SearchInput } from './ui/atoms/Search/Search';
 import './index.css';
 import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
+import { FormSection } from './ui/organisms/FormSection/FormSection';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -28,6 +29,7 @@ export default function App() {
         <FilterButton onClick={handleOpen} />
         <SearchInput />
         <PersonalDataInformation />
+        <FormSection />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

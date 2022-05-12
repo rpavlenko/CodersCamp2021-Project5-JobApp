@@ -12,6 +12,7 @@ import { FilterPage } from './ui/Pages/FilterPage';
 import { Container, Modal } from '@mui/material';
 import './index.css';
 import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
+import { FormSection } from './ui/organisms/FormSection/FormSection';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -19,10 +20,10 @@ export default function App() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      <Container maxWidth="lg">
-        <header className="App-header">
+      <Container maxWidth='lg'>
+        <header className='App-header'>
           <p>Hello Vite + React + MaterialUI!</p>
         </header>
         <OffersList offers={offersData} />
@@ -33,8 +34,9 @@ export default function App() {
         <DetailOfferDescription />
         <DailyTasks />
         <FilterButton onClick={handleOpen} />
-        <PersonalDataInformation/>
-        <BottomApplyFofAnOffer/>
+        <PersonalDataInformation />
+        <BottomApplyFofAnOffer />
+        <FormSection />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

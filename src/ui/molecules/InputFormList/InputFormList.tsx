@@ -23,7 +23,7 @@ const labelData = [
   },
   {
     id: 5,
-    label: 'Lokalizacja ',
+    label: 'Lokalizacja',
     requiredStar: true,
   }
 ];

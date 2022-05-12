@@ -7,11 +7,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from './ui/organisms/Header';
 import { FilterPage } from './ui/Pages/FilterPage';
 import { Container, Modal } from '@mui/material';
-import { BottomApplyFofAnOffer } from './ui/molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
 import { SearchInput } from './ui/atoms/Search/Search';
-import { DetailHeader } from './ui/organisms/DetailHeader';
-import { BaseButton } from './ui/atoms/Button/BaseButton';
 import './index.css';
+import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -21,18 +19,15 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-
       <Routes>
         <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/detail/:id" element={<OfferDetailPage/>} />
       </Routes>
-
       <Container maxWidth="lg">
         <OffersList offers={offersData} />
-        <DetailHeader />
         <FilterButton onClick={handleOpen} />
-        <PersonalDataInformation />
-        <BottomApplyFofAnOffer />
         <SearchInput />
+        <PersonalDataInformation />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

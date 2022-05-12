@@ -1,7 +1,7 @@
 import { CoreRequirements } from '../DetailOfferDescription/CoreRequirements';
 import { DailyTasks } from '../DetailOfferDescription/DailyTasks';
 import { DetailOfferDescription } from '../DetailOfferDescription/DetailOfferDescription';
-import { Box, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 import BusinessIcon from '@mui/icons-material/Business';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
@@ -120,8 +120,10 @@ export const DetailOfferHeaderDescription = ({
         <LanguageIcon fontSize="small" sx={{ marginRight: '10px' }} />
         <Typography>{languages.join(', ')}</Typography>
       </Box>
-      <DetailOfferDescription offerDescription={offerDescription} />
       <CoreRequirements data={coreRequirements} />
+      <Divider />
+      <DetailOfferDescription offerDescription={offerDescription} />
+      <Divider />
       <DailyTasks dailyTasks={dailyTasks} />
     </div>
   );

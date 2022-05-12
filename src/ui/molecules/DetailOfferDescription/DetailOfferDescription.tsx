@@ -11,7 +11,7 @@ export const DetailOfferDescription = ({
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <SubheaderOfDescription> Opis stanowiska </SubheaderOfDescription>
-      <ReadMore text={offerDescription} sx={{ marginTop: '20px' }} />
+      <ReadMore text={offerDescription} sx={{ marginTop: '10px' }} />
     </Box>
   );
 };

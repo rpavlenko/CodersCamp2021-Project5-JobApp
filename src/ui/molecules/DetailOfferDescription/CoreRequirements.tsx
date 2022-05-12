@@ -18,7 +18,7 @@ export const CoreRequirements = ({ data }: ICoreRequirements) => {
           <SingleFilterButton key={item.id} item={item} />
         ))}
       </Box>
-      <Box>
+      <Box sx={{marginBottom: '30px'}}>
         <SubheaderOfDescription> Mile widziane </SubheaderOfDescription>
         {data.map((item) => (
           <SingleFilterButton key={item.id} item={item} />

@@ -11,6 +11,7 @@ import { SearchInput } from './ui/atoms/Search/Search';
 import './index.css';
 import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
 import { FormSection } from './ui/organisms/FormSection/FormSection';
+import { HeaderFormPage } from './ui/atoms/HeaderFormPage/HeaderFormPage';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -25,11 +26,12 @@ export default function App() {
         <Route path="/detail/:id" element={<OfferDetailPage/>} />
       </Routes>
       <Container maxWidth="lg">
-        <OffersList offers={offersData} />
-        <FilterButton onClick={handleOpen} />
         <SearchInput />
-        <PersonalDataInformation />
+        <FilterButton onClick={handleOpen} />
+        <OffersList offers={offersData} />
+        <HeaderFormPage/>
         <FormSection />
+        <PersonalDataInformation />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

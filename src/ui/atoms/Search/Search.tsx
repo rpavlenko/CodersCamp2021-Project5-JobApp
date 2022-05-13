@@ -11,9 +11,7 @@ export const SearchInput = () => {
         p: '2px 4px',
         display: 'flex',
         alignItems: 'center',
-        width: '100%vh',
-        marginTop: '30px',
-        marginBottom: '30px',
+        width: '100%',
         '&:hover': {
           backgroundColor: '#eee',
         },

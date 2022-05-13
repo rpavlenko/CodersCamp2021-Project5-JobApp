@@ -15,7 +15,7 @@ interface IOffersList {
 
 export const OffersList = ({ offers }: IOffersList) => {
   return (
-    <Box sx={{ marginTop: '10px', marginBottom: '10px' }}>
+    <Box sx={{ marginBottom: '10px' }}>
       {offers.map(
         ({
           id,

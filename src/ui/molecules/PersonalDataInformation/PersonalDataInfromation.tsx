@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import {Box} from '@mui/material';
 import { ReadMore } from '../ReadMore';
 
 
@@ -11,7 +11,7 @@ export const PersonalDataInformation = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <ReadMore text={dataInformation}
-                sx={{ color: '#adb5bd', marginTop: '30px', fontSize: '12px' }} />
+                sx={{ color: '#adb5bd', marginTop: '15px', fontSize: '12px' }} />
     </Box>
   );
 };

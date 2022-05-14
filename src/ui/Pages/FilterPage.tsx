@@ -181,6 +181,7 @@ const data = [{
         name: 'Kraków',
       }],
   }];
+
 interface IProps {
  onClose: () => void
 }

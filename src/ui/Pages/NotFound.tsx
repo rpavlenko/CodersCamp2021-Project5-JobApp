@@ -10,13 +10,15 @@ export default function NotFound() {
         <Typography variant="h5" mb={2}>
           Strona nie znaleziona
         </Typography>
-        <BaseButton
-          variant="contained"
-          size="large"
-          sx={{ marginBottom: '20px', bgcolor: 'secondary.main' }}
-        >
-          Wrócić na główną!
-        </BaseButton>
+        <a href="/">
+          <BaseButton
+            variant="contained"
+            size="large"
+            sx={{ marginBottom: '20px', bgcolor: 'secondary.main' }}
+          >
+            Wrócić na główną!
+          </BaseButton>
+        </a>
       </Container>
     </div>
   );

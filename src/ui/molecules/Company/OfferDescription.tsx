@@ -57,10 +57,10 @@ export const OfferDescription = ({
           },
         }}
       >
-        <SalaryButton variant={'outlined'} color={'primary'} size={'small'}>
+        <SalaryButton variant={'outlined'} color={'secondary'} size={'small'}>
           {buttonTitle}
         </SalaryButton>
-        <LanguageButton variant={'outlined'} color={'primary'} size={'small'}>
+        <LanguageButton variant={'outlined'} color={'secondary'} size={'small'}>
           {languageTitle}
         </LanguageButton>
       </Box>

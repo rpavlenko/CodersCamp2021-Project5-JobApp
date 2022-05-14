@@ -13,6 +13,12 @@ body {
   color: #6a5f5f;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 h1,
 h2,
 h3,

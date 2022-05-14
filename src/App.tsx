@@ -15,19 +15,18 @@ export default function App() {
         <Route path="*" element={<div>Not Found</div>} />
         <Route path="/detail/:id" element={<OfferDetailPage />} />
         <Route path="/" element={<MainPage />} />
-      </Routes>
-      {/*//TO DO*/}
-      {/*<Container maxWidth='lg'>*/}
-      {/*  <BackIconButton/>*/}
-      {/*  <HeaderFormPage />*/}
-      {/*  <FormSection />*/}
-      {/*  <AddCV />*/}
-      {/*  <PersonalDataInformation />*/}
-      {/*</Container>*/}
-        <Route path='*' element={<div>Not Found</div>} />
-        <Route path='/detail/:id' element={<OfferDetailPage />} />
-        <Route path='/' element={<MainPage />} />
-        <Route path='/detail/:id/apply' element={<FormPage />} />
+        {/*//TO DO*/}
+        {/*<Container maxWidth='lg'>*/}
+        {/*  <BackIconButton/>*/}
+        {/*  <HeaderFormPage />*/}
+        {/*  <FormSection />*/}
+        {/*  <AddCV />*/}
+        {/*  <PersonalDataInformation />*/}
+        {/*</Container>*/}
+        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/detail/:id" element={<OfferDetailPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/detail/:id/apply" element={<FormPage />} />
       </Routes>
       <Footer />
     </div>

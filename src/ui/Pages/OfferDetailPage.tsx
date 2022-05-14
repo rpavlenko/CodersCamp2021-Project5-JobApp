@@ -4,9 +4,16 @@ import { BottomApplyFofAnOffer } from '../molecules/BottomApplyFofAnOffer/Bottom
 import AppBar from '@mui/material/AppBar';
 import { Box } from '@mui/material';
 import { BackIconButton } from '../atoms/Button/BackIconButton';
+import { useNavigate } from "react-router-dom";
 
 export const OfferDetailPage = () => {
-  return (<>
+ let navigate = useNavigate();
+ //TODO Dynamic ID
+  const handleClick = () => {
+    navigate("/detail/:id/apply");
+  }
+  return (
+    <>
       <Container>
         <Box sx={{ paddingBottom: '82px' }}>
           <BackIconButton/>
@@ -14,7 +21,7 @@ export const OfferDetailPage = () => {
         </Box>
         <AppBar position='fixed' sx={{ top: 'auto', bottom: 0 }}>
           <Container>
-            <BottomApplyFofAnOffer />
+            <BottomApplyFofAnOffer onClick={handleClick} />
           </Container>
         </AppBar>
       </Container>

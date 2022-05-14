@@ -1,6 +1,7 @@
 import { PersonalDataInformation } from './ui/molecules/PersonalDataInformation/PersonalDataInfromation';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './ui/organisms/Header';
+import { Footer } from './ui/organisms/Footer';
 import { Container } from '@mui/material';
 import './index.css';
 import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
@@ -11,12 +12,12 @@ import { AddCV } from './ui/molecules/AddCV/AddCV';
 import { BackIconButton } from './ui/atoms/Button/BackIconButton';
 export default function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
       <Routes>
-        <Route path='*' element={<div>Not Found</div>} />
-        <Route path='/detail/:id' element={<OfferDetailPage />} />
-        <Route path='/' element={<MainPage />} />
+        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/detail/:id" element={<OfferDetailPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
       {/*//TO DO*/}
       {/*<Container maxWidth='lg'>*/}
@@ -26,6 +27,7 @@ export default function App() {
       {/*  <AddCV />*/}
       {/*  <PersonalDataInformation />*/}
       {/*</Container>*/}
+      <Footer />
     </div>
   );
 }

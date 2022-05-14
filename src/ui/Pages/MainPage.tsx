@@ -15,8 +15,15 @@ export const MainPage = () => {
 
   return (
     <>
-      <Container maxWidth='xl' sx={{ backgroundColor: 'black' }}>
-        <Container sx={{ paddingTop: '30px', marginBottom: '20px', width: '100%', backgroundColor: 'black' }}>
+      <Container maxWidth="xl" sx={{ backgroundColor: 'black' }}>
+        <Container
+          sx={{
+            paddingTop: '30px',
+            marginBottom: '20px',
+            width: '100%',
+            backgroundColor: 'black',
+          }}
+        >
           <SearchInput />
           <FilterButton onClick={handleOpen} />
           <FavouriteButton />

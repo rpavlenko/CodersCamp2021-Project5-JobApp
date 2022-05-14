@@ -68,7 +68,7 @@ export const Footer = () => {
         </Typography>
       </Box>
       <Typography mt={4} align="center">
-        © 2022 Owocowe czwartki
+        © 2022 Owocowe Czwartki
       </Typography>
     </Box>
   );

@@ -6,13 +6,14 @@ import './index.css';
 import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
 import { MainPage } from './ui/Pages/MainPage';
 import { FormPage } from './ui/Pages/FormPage';
+import NotFound from './ui/Pages/NotFound';
 
 export default function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/detail/:id" element={<OfferDetailPage />} />
         <Route path="/" element={<MainPage />} />
         {/*//TO DO*/}

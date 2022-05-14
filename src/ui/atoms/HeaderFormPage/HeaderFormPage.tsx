@@ -8,7 +8,8 @@ export const HeaderFormPage = () => {
       sx={{
         fontSize: '30px',
         fontWeight: '700',
-        my: '40px',
+        marginTop: '10px',
+        marginBottom: '40px',
       }}>
       Aplikuj na ofertę pracy
     </Typography>

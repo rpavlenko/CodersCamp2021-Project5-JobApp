@@ -1,17 +1,23 @@
 import { Routes, Route } from 'react-router-dom';
+import * as firebase from 'firebase/app';
+import firebaseConfig from './base';
+import { useAuth } from './hooks/useAuth';
 import { Header } from './ui/organisms/Header';
 import { Footer } from './ui/organisms/Footer';
 import { Container } from '@mui/material';
-import './index.css';
 import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
 import { MainPage } from './ui/Pages/MainPage';
 import { FormPage } from './ui/Pages/FormPage';
-import NotFound from './ui/Pages/NotFound';
+import { NotFound } from './ui/Pages/NotFound';
+import './index.css';
 
 export default function App() {
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = useAuth();
+
   return (
     <div className="App">
-      <Header />
+      <Header auth={auth} />
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/detail/:id" element={<OfferDetailPage />} />

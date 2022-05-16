@@ -3,7 +3,7 @@ import notFound from '../../assets/not-found-page.png';
 import { BaseButton } from '../atoms/Button/BaseButton';
 import { useNavigate } from 'react-router-dom';
 
-export default function NotFound() {
+export const NotFound = () => {
   let navigate = useNavigate();
   const handleClick = () => {
     navigate('/');
@@ -26,4 +26,4 @@ export default function NotFound() {
       </Container>
     </div>
   );
-}
+};

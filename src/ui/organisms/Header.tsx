@@ -22,7 +22,7 @@ import logo from '../../assets/logo.svg';
 const pages = ['Oferty pracy', 'Dla pracodawcy', 'Blog'];
 const settings = ['Profil', 'Ustawienia', 'Logout'];
 
-export const Header = () => {
+export const Header = ({ auth }) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
@@ -47,6 +47,8 @@ export const Header = () => {
 
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
+
+  console.log();
 
   return (
     <AppBar position="fixed">
@@ -142,35 +144,49 @@ export const Header = () => {
               <Brightness4Icon />
             )}
           </IconButton>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          {auth.authentication ? (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="User Avatar" src="">
+                    {auth.authentication.displayName.slice(0, 1)}
+                  </Avatar>
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: '45px' }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => {
+                  return (
+                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                      {setting === 'Logout' ? (
+                        <Typography textAlign="center" onClick={auth.logout}>
+                          {setting}
+                        </Typography>
+                      ) : (
+                        <Typography textAlign="center">{setting}</Typography>
+                      )}
+                    </MenuItem>
+                  );
+                })}
+              </Menu>
+            </Box>
+          ) : (
+            <Avatar alt="User Avatar" src="" onClick={auth.login} />
+          )}
         </Toolbar>
       </Container>
     </AppBar>

@@ -15,7 +15,7 @@ export const ReadMore = ({ sx, text }: IProps) => {
       <Typography sx={sx}>
         {readMore ? text : `${text.substring(0, 200)}...`}
       </Typography>
-      <Button onClick={handleClick}
+      <Button color={'primary'} onClick={handleClick}
               sx={{ textTransform: 'none', marginBottom: '10px' }}>
         {readMore ? 'zwiń' : 'rozwiń'}
       </Button>

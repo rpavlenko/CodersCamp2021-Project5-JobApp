@@ -22,6 +22,8 @@ import logo from '../../assets/logo.svg';
 const pages = ['Oferty pracy', 'Dla pracodawcy', 'Blog'];
 const settings = ['Profil', 'Ustawienia', 'Logout'];
 
+// TODO
+// @ts-ignore
 export const Header = ({ auth }) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,

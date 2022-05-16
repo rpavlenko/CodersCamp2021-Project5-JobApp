@@ -35,7 +35,7 @@ export const Footer = () => {
         >
           <MailIcon />
           <Typography component="span" ml={1}>
-            Napisz nam:
+            Napisz:
           </Typography>
         </Box>
         <Typography component="span">

@@ -15,7 +15,7 @@ export const OfferDetailPage = () => {
   return (
     <>
       <Container>
-        <Box sx={{ paddingBottom: '82px' }}>
+        <Box sx={{ paddingBottom: '40px' }}>
           <BackIconButton />
           <DetailHeader />
         </Box>

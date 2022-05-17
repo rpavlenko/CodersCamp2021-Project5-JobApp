@@ -13,15 +13,11 @@ export const OfferDetailPage = () => {
     navigate('/detail/:id/apply');
   };
 
-  const handleBackClick = () => {
-    navigate('/')
-  };
-
     return (
       <>
         <Container>
           <Box sx={{ paddingBottom: '40px' }}>
-            <BackIconButton onClick={handleBackClick} />
+            <BackIconButton />
             <DetailHeader />
           </Box>
         </Container>

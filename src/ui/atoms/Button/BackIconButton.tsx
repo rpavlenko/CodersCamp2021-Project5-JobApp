@@ -1,15 +1,17 @@
 import IconButton from '@mui/material/IconButton';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import { useNavigate } from 'react-router-dom';
 
-interface IProps {
-  onClick: () => void
-}
+export const BackIconButton = () => {
+  const navigate = useNavigate();
+  const handleBackClick = () => {
+    navigate('/');
+  };
 
-export const BackIconButton = ({onClick } : IProps) => {
   return (
-    <IconButton aria-label="back"
-                sx={{padding: 0, marginTop: '15px', marginBottom: '10px'}}>
-      <ArrowCircleLeftOutlinedIcon onClick={onClick} fontSize={'large'} />
+    <IconButton aria-label='back'
+                sx={{ padding: 0, marginTop: '15px', marginBottom: '10px' }}>
+      <ArrowCircleLeftOutlinedIcon onClick={handleBackClick} fontSize={'large'} />
     </IconButton>
-  )
-}
+  );
+};

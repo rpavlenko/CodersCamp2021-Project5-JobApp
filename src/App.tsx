@@ -51,7 +51,7 @@ export default function App() {
         <Route path="/detail/:id/apply" element={<FormPage />} />
         <Route path="/favourite" element={<FavouriteOffersPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

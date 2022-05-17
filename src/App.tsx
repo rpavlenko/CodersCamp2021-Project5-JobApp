@@ -48,21 +48,10 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/detail/:id" element={<OfferDetailPage />} />
         <Route path="/" element={<MainPage />} />
-        {/*//TO DO*/}
-        {/*<Container maxWidth='lg'>*/}
-        {/*  <BackIconButton/>*/}
-        {/*  <HeaderFormPage />*/}
-        {/*  <FormSection />*/}
-        {/*  <AddCV />*/}
-        {/*  <PersonalDataInformation />*/}
-        {/*</Container>*/}
-        <Route path="*" element={<div>Not Found</div>} />
-        <Route path="/detail/:id" element={<OfferDetailPage />} />
-        <Route path="/" element={<MainPage />} />
         <Route path="/detail/:id/apply" element={<FormPage />} />
         <Route path="/favourite" element={<FavouriteOffersPage />} />
       </Routes>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

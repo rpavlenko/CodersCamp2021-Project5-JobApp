@@ -22,22 +22,29 @@ export const AddCVButton = () => {
     <>
       <Input
         onChange={onChange}
-        accept='image/*'
-        id='contained-button-file'
-        type='file'
+        accept="image/*"
+        id="contained-button-file"
+        type="file"
         sx={{ display: 'none' }}
       />
       <Typography sx={{ fontSize: '12px' }}> {fileName} </Typography>
-      {fileName ? <ClosingButton onClose={onClose} /> :
-        <label htmlFor='contained-button-file'>
-          <Button variant='outlined' component='span' sx={{
-            borderRadius: 0,
-            textTransform: 'none',
-          }}>
+      {fileName ? (
+        <ClosingButton onClose={onClose} />
+      ) : (
+        <label htmlFor="contained-button-file">
+          <Button
+            variant="outlined"
+            component="span"
+            color="secondary"
+            sx={{
+              borderRadius: 0,
+              textTransform: 'none',
+            }}
+          >
             Wgraj
           </Button>
         </label>
-      }
+      )}
     </>
   );
 };

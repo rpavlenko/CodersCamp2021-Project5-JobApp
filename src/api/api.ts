@@ -1,7 +1,8 @@
 import logo from '../assets/companyLogo.jpg';
+import { IOffers, IOfferData, IFiltersData } from './models';
 
 // endpoint get:  /api/v1/offers
-export const offersData = [
+export const offersData: IOffers[] = [
   {
     id: 1,
     jobType: 'Zdalna',
@@ -41,7 +42,7 @@ export const offersData = [
 ];
 
 // endpoint get:  /api/v1/offers/:id
-export const offerData = {
+export const offerData: IOfferData = {
   id: 1,
   date: '2022-01-01',
   logo: 'https://static.nofluffjobs.com/companies/logos/original/softserve_20220328_140653_20220328_165558.webp',
@@ -147,43 +148,45 @@ export const offerData = {
   ],
 };
 
-
-export const filtersData = [{
-  id: 1,
-  category: 'Technologie',
-  options: [
-    {
-      id: 1,
-      name: 'java',
-    }, {
-      id: 2,
-      name: 'angular',
-    },
-    {
-      id: 3,
-      name: 'react',
-    },
-    {
-      id: 4,
-      name: 'php',
-    },
-    {
-      id: 5,
-      name: 'node',
-    },
-    {
-      id: 6,
-      name: 'c#',
-    },
-    {
-      id: 7,
-      name: 'c',
-    },
-    {
-      id: 8,
-      name: 'c++',
-    }],
-},
+export const filtersData: IFiltersData[] = [
+  {
+    id: 1,
+    category: 'Technologie',
+    options: [
+      {
+        id: 1,
+        name: 'java',
+      },
+      {
+        id: 2,
+        name: 'angular',
+      },
+      {
+        id: 3,
+        name: 'react',
+      },
+      {
+        id: 4,
+        name: 'php',
+      },
+      {
+        id: 5,
+        name: 'node',
+      },
+      {
+        id: 6,
+        name: 'c#',
+      },
+      {
+        id: 7,
+        name: 'c',
+      },
+      {
+        id: 8,
+        name: 'c++',
+      },
+    ],
+  },
   {
     id: 2,
     category: 'Lokalizacje',
@@ -191,7 +194,8 @@ export const filtersData = [{
       {
         id: 1,
         name: 'Warszawa',
-      }, {
+      },
+      {
         id: 2,
         name: 'Lublin',
       },
@@ -218,15 +222,18 @@ export const filtersData = [{
       {
         id: 8,
         name: 'Kraków',
-      }],
-  }, {
+      },
+    ],
+  },
+  {
     id: 3,
     category: 'Typ umowy',
     options: [
       {
         id: 1,
         name: 'Umowa o pracę',
-      }, {
+      },
+      {
         id: 2,
         name: 'Umowa zlecenie',
       },
@@ -241,15 +248,18 @@ export const filtersData = [{
       {
         id: 5,
         name: 'Bezpłatny staż',
-      }],
-  }, {
+      },
+    ],
+  },
+  {
     id: 4,
     category: 'Doświadczenie',
     options: [
       {
         id: 1,
         name: 'Stażysta',
-      }, {
+      },
+      {
         id: 2,
         name: 'Junior',
       },
@@ -264,15 +274,18 @@ export const filtersData = [{
       {
         id: 5,
         name: 'Expert',
-      }],
-  }, {
+      },
+    ],
+  },
+  {
     id: 5,
     category: 'Język pracy',
     options: [
       {
         id: 1,
         name: 'polski',
-      }, {
+      },
+      {
         id: 2,
         name: 'angielski',
       },
@@ -299,5 +312,7 @@ export const filtersData = [{
       {
         id: 8,
         name: 'czeski',
-      }],
-  }];
+      },
+    ],
+  },
+];

@@ -20,7 +20,7 @@ export const FormPage = () => {
         <Box display='flex' justifyContent='flex-end' sx={{ marginTop: '20px' }}>
           <ClosingButton onClose={handleClick} />
         </Box>
-        <HeaderFormPage />
+        <HeaderFormPage props={'Aplikuj na ofertę pracy'} />
         <FormSection />
         <AddCV />
         <PersonalDataInformation />

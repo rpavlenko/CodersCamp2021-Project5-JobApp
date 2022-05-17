@@ -146,3 +146,158 @@ export const offerData = {
     },
   ],
 };
+
+
+export const filtersData = [{
+  id: 1,
+  category: 'Technologie',
+  options: [
+    {
+      id: 1,
+      name: 'java',
+    }, {
+      id: 2,
+      name: 'angular',
+    },
+    {
+      id: 3,
+      name: 'react',
+    },
+    {
+      id: 4,
+      name: 'php',
+    },
+    {
+      id: 5,
+      name: 'node',
+    },
+    {
+      id: 6,
+      name: 'c#',
+    },
+    {
+      id: 7,
+      name: 'c',
+    },
+    {
+      id: 8,
+      name: 'c++',
+    }],
+},
+  {
+    id: 2,
+    category: 'Lokalizacje',
+    options: [
+      {
+        id: 1,
+        name: 'Warszawa',
+      }, {
+        id: 2,
+        name: 'Lublin',
+      },
+      {
+        id: 3,
+        name: 'Białystok',
+      },
+      {
+        id: 4,
+        name: 'Wrocław',
+      },
+      {
+        id: 5,
+        name: 'Łódź',
+      },
+      {
+        id: 6,
+        name: 'Zakopane',
+      },
+      {
+        id: 7,
+        name: 'Gdańsk',
+      },
+      {
+        id: 8,
+        name: 'Kraków',
+      }],
+  }, {
+    id: 3,
+    category: 'Typ umowy',
+    options: [
+      {
+        id: 1,
+        name: 'Umowa o pracę',
+      }, {
+        id: 2,
+        name: 'Umowa zlecenie',
+      },
+      {
+        id: 3,
+        name: 'B2B',
+      },
+      {
+        id: 4,
+        name: 'Umowa o dzieło',
+      },
+      {
+        id: 5,
+        name: 'Bezpłatny staż',
+      }],
+  }, {
+    id: 4,
+    category: 'Doświadczenie',
+    options: [
+      {
+        id: 1,
+        name: 'Stażysta',
+      }, {
+        id: 2,
+        name: 'Junior',
+      },
+      {
+        id: 3,
+        name: 'Mid',
+      },
+      {
+        id: 4,
+        name: 'Senior',
+      },
+      {
+        id: 5,
+        name: 'Expert',
+      }],
+  }, {
+    id: 5,
+    category: 'Język pracy',
+    options: [
+      {
+        id: 1,
+        name: 'polski',
+      }, {
+        id: 2,
+        name: 'angielski',
+      },
+      {
+        id: 3,
+        name: 'ukraiński',
+      },
+      {
+        id: 4,
+        name: 'rosyjski',
+      },
+      {
+        id: 5,
+        name: 'węgierski',
+      },
+      {
+        id: 6,
+        name: 'słowacki',
+      },
+      {
+        id: 7,
+        name: 'białoruski',
+      },
+      {
+        id: 8,
+        name: 'czeski',
+      }],
+  }];

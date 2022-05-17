@@ -13,5 +13,5 @@ export const BackIconButton = () => {
                 sx={{ padding: 0, marginTop: '15px', marginBottom: '10px' }}>
       <ArrowCircleLeftOutlinedIcon onClick={handleBackClick} fontSize={'large'} />
     </IconButton>
-  );
-};
+  )
+}

@@ -5,9 +5,10 @@ import { BackIconButton } from '../atoms/Button/BackIconButton';
 import { HeaderFormPage } from '../atoms/HeaderFormPage/HeaderFormPage';
 
 export const FavouriteOffersPage = () => {
-  return (<>
+  return (
+    <>
       <Container>
-          <BackIconButton />
+        <BackIconButton />
         <HeaderFormPage props={'Ulubione oferty pracy'} />
         <OffersList offers={offersData} />
       </Container>

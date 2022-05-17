@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Provider>
       </BrowserRouter>
     </ColorModeContextProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

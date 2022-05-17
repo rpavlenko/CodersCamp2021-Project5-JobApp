@@ -1,6 +1,10 @@
 import Typography from '@mui/material/Typography';
 
-export const HeaderFormPage = () => {
+interface IProps {
+  props: string
+}
+
+export const HeaderFormPage = ({props}: IProps) => {
   return (
     <Typography
       variant={'h1'}
@@ -11,7 +15,7 @@ export const HeaderFormPage = () => {
         marginTop: '10px',
         marginBottom: '40px',
       }}>
-      Aplikuj na ofertę pracy
+      {props}
     </Typography>
   );
 };

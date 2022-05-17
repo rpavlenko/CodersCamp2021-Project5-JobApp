@@ -12,6 +12,7 @@ export const SearchInput = () => {
         display: 'flex',
         alignItems: 'center',
         width: '100%',
+        height: '42px',
         '&:hover': {
           backgroundColor: '#eee',
         },

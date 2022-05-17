@@ -12,19 +12,24 @@ export const OfferDetailPage = () => {
   const handleClick = () => {
     navigate('/detail/:id/apply');
   };
-  return (
-    <>
-      <Container>
-        <Box sx={{ paddingBottom: '40px' }}>
-          <BackIconButton />
-          <DetailHeader />
-        </Box>
-      </Container>
-      <AppBar position="sticky" sx={{ top: 'auto', bottom: 0 }}>
+
+  const handleBackClick = () => {
+    navigate('/')
+  };
+
+    return (
+      <>
         <Container>
-          <BottomApplyFofAnOffer onClick={handleClick} />
+          <Box sx={{ paddingBottom: '40px' }}>
+            <BackIconButton onClick={handleBackClick} />
+            <DetailHeader />
+          </Box>
         </Container>
-      </AppBar>
-    </>
-  );
-};
+        <AppBar position='sticky' sx={{ top: 'auto', bottom: 0 }}>
+          <Container>
+            <BottomApplyFofAnOffer onClick={handleClick} />
+          </Container>
+        </AppBar>
+      </>
+    );
+  };

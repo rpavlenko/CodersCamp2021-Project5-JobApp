@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 export interface IButton {
   children: React.ReactNode;
   variant: 'outlined' | 'contained';
-  color?: 'primary';
+  color?: 'primary' | 'secondary';
   size: 'small' | 'medium' | 'large';
   startIcon?: React.ReactNode;
   sx?: Record<string, unknown>;
@@ -18,7 +18,8 @@ export const BaseButton = ({
   size,
   startIcon,
   sx,
-  fullWidth, onClick
+  fullWidth,
+  onClick,
 }: IButton) => {
   return (
     <Button

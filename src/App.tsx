@@ -1,40 +1,42 @@
-import { useState } from 'react';
-import { offersData } from './api/api';
-import { BaseButton } from './ui/atoms/Button/BaseButton';
-import { FilterButton } from './ui/atoms/Button/FilterButton';
-import { DailyTasks } from './ui/molecules/DetailOfferDescription/DailyTasks';
-import { DetailOfferDescription } from './ui/molecules/DetailOfferDescription/DetailOfferDescription';
-import { CoreRequirements } from './ui/molecules/DetailOfferDescription/CoreRequirements';
-import { OffersList } from './ui/organisms/OffersList';
+import { Routes, Route } from 'react-router-dom';
+import * as firebase from 'firebase/app';
+import firebaseConfig from './base';
+import { useAuth } from './hooks/useAuth';
 import { Header } from './ui/organisms/Header';
-import { FilterPage } from './ui/Pages/FilterPage';
-import { Container, Modal } from '@mui/material';
+import { Footer } from './ui/organisms/Footer';
+import { OfferDetailPage } from './ui/Pages/OfferDetailPage';
+import { MainPage } from './ui/Pages/MainPage';
+import { FormPage } from './ui/Pages/FormPage';
+import { NotFound } from './ui/Pages/NotFound';
 import './index.css';
+import { FavouriteOffersPage } from './ui/Pages/FavouriteOffersPage';
 
 export default function App() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = useAuth();
 
   return (
     <div className="App">
-      <Header />
-      <Container maxWidth="lg">
-        <header className="App-header">
-          <p>Hello Vite + React + MaterialUI!</p>
-        </header>
-        <OffersList offers={offersData} />
-        <BaseButton variant={'outlined'} color={'primary'} size={'large'}>
-          Filtry
-        </BaseButton>
-        <CoreRequirements />
-        <DetailOfferDescription />
-        <DailyTasks />
-        <FilterButton onClick={handleOpen} />
-      </Container>
-      <Modal open={open} sx={{ overflow: 'scroll' }}>
-        <FilterPage onClose={handleClose} />
-      </Modal>
+      <Header auth={auth} />
+      <Routes>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/detail/:id" element={<OfferDetailPage />} />
+        <Route path="/" element={<MainPage />} />
+        {/*//TO DO*/}
+        {/*<Container maxWidth='lg'>*/}
+        {/*  <BackIconButton/>*/}
+        {/*  <HeaderFormPage />*/}
+        {/*  <FormSection />*/}
+        {/*  <AddCV />*/}
+        {/*  <PersonalDataInformation />*/}
+        {/*</Container>*/}
+        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/detail/:id" element={<OfferDetailPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/detail/:id/apply" element={<FormPage />} />
+        <Route path="/favourite" element={<FavouriteOffersPage/>}/>
+      </Routes>
+      <Footer />
     </div>
   );
 }

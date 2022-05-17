@@ -43,6 +43,7 @@ export const ListItem = ({
         alt="company name alt"
         width={60}
         height={34}
+        style={{ height: '34px', objectFit: 'contain', minWidth: '60px' }}
       />
       <OfferDescription
         jobTitle={jobTitle}

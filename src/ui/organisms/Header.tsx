@@ -66,7 +66,7 @@ export const Header = ({ auth }) => {
               <img
                 src={logo}
                 width={200}
-                height={100}
+                height={40}
                 alt="logo firmy Owocowe Czwartki"
                 style={{ verticalAlign: 'bottom' }}
               />
@@ -118,7 +118,7 @@ export const Header = ({ auth }) => {
               <img
                 src={logo}
                 width={200}
-                height={100}
+                height={40}
                 alt="logo firmy Owocowe Czwartki"
                 style={{ verticalAlign: 'bottom' }}
               />

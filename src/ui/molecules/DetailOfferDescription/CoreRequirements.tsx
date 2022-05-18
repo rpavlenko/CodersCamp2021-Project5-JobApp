@@ -12,13 +12,13 @@ interface ICoreRequirements {
 export const CoreRequirements = ({ data }: ICoreRequirements) => {
   return (
     <>
-      <Box>
+      <Box sx={{marginTop: '20px'}}>
         <SubheaderOfDescription> Wymagania obowiązkowe </SubheaderOfDescription>
         {data.map((item) => (
           <SingleFilterButton key={item.id} item={item} />
         ))}
       </Box>
-      <Box sx={{marginBottom: '30px'}}>
+      <Box sx={{marginTop: '0px', marginBottom: '15px'}}>
         <SubheaderOfDescription> Mile widziane </SubheaderOfDescription>
         {data.map((item) => (
           <SingleFilterButton key={item.id} item={item} />
@@ -27,3 +27,4 @@ export const CoreRequirements = ({ data }: ICoreRequirements) => {
     </>
   );
 };
+

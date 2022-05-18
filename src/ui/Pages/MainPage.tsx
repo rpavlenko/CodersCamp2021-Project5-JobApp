@@ -1,7 +1,6 @@
 import { Container, Modal } from '@mui/material';
 import { SearchInput } from '../atoms/Search/Search';
 import { FilterButton } from '../atoms/Button/FilterButton';
-import { offersData } from '../../api/api';
 import { OffersList } from '../organisms/OffersList';
 import { FavouriteButton } from '../atoms/Button/FavouriteButton';
 import { useState } from 'react';
@@ -31,7 +30,7 @@ export const MainPage = () => {
       </Container>
       <Container>
         <OffersTitle />
-        <OffersList offers={offersData} />
+        <OffersList/>
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

@@ -1,22 +1,13 @@
 import { ListItem } from '../molecules/ListItem';
 import { Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
-interface IOffersList {
-  offers: {
-    id: number;
-    jobType: string;
-    jobTitle: string;
-    companyTitle: string;
-    buttonTitle: string;
-    languageTitle: string;
-    logo: string;
-  }[];
-}
 
-export const OffersList = (props: IOffersList) => {
-  const { offers } = props;
+export const OffersList = () => {
   const navigate = useNavigate();
+  const offers = useSelector((state: RootState) => state.offers.list);
 
   return (
     <Box sx={{ marginBottom: '30px' }}>

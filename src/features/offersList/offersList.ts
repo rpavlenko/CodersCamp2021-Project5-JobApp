@@ -1,25 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { offersData } from '../../api/api';
-import { IOffers } from '../../api/models';
+import { IOfferData } from '../../api/models';
 
 export interface offerListState {
-  list: IOffers[];
+  list: IOfferData[];
 }
 
 const initialState: offerListState = {
-  list: offersData,
+  list: [],
 };
 
 export const offersListSlice = createSlice({
   name: 'offersList',
   initialState,
   reducers: {
-    checkReducer: (state) => {
-      console.log('Check reducer');
+    fetchOffers: (state, action) => {
+      console.log({state, action})
+      state.list = action.payload
     },
   },
 });
 
-export const { checkReducer } = offersListSlice.actions;
+export const { fetchOffers } = offersListSlice.actions;
 
 export default offersListSlice.reducer;

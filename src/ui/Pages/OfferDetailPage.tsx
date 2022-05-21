@@ -11,6 +11,7 @@ export const OfferDetailPage = () => {
   let navigate = useNavigate();
   const { id } = useParams();
   const offer = useFetchOfferData(id);
+  console.log(offer);
 
   const handleClick = () => {
     navigate('/detail/:id/apply');

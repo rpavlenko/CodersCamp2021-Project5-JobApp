@@ -10,6 +10,9 @@ export const FavouriteOffersPage = () => {
       <Container>
         <BackIconButton />
         <HeaderFormPage props={'Ulubione oferty pracy'} />
+
+        {/*
+        // @ts-ignore */}
         <OffersList offers={offersData} />
       </Container>
     </>

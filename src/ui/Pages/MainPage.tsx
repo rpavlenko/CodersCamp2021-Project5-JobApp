@@ -1,21 +1,25 @@
 import { Container, Modal } from '@mui/material';
 import { SearchInput } from '../atoms/Search/Search';
 import { FilterButton } from '../atoms/Button/FilterButton';
-import { offersData } from '../../api/api';
 import { OffersList } from '../organisms/OffersList';
 import { FavouriteButton } from '../atoms/Button/FavouriteButton';
 import { useState } from 'react';
 import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
+import { useFetchOffersData } from '../../hooks/useFetchOffersData';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
 export const MainPage = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  useFetchOffersData();
+  const offers = useSelector((state: RootState) => state.offers.list);
 
   return (
     <>
-      <Container maxWidth="xl" sx={{ backgroundColor: 'black' }}>
+      <Container maxWidth='xl' sx={{ backgroundColor: 'black' }}>
         <Container
           sx={{
             paddingTop: '30px',
@@ -31,7 +35,7 @@ export const MainPage = () => {
       </Container>
       <Container>
         <OffersTitle />
-        <OffersList offers={offersData} />
+        <OffersList offers={offers}/>
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>
         <FilterPage onClose={handleClose} />

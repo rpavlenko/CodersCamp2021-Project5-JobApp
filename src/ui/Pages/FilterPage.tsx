@@ -12,7 +12,7 @@ interface IProps {
 export const FilterPage = (props: IProps) => {
   const { onClose } = props;
   return (
-    <Box sx={{ margin: '0px', backgroundColor: 'white', height: '100vh' }}>
+    <Box sx={{ margin: '0px', height: '100vh' }}>
       <AppBar position='fixed' >
         <FilterTitle onClose={onClose}/>
       </AppBar>

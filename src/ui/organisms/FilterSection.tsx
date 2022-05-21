@@ -31,10 +31,10 @@ export const FilterSection = (props: IProps) => {
           margin: 0,
         },
       }}>
-        <AccordionSummary sx={{ padding: '0px', height: '30px', backgroundColor: '#eee' }}>
+        <AccordionSummary sx={{ padding: '0px', height: '30px' }}>
           <FiltersHeader category={category} numberCategories={chosenArray.length} />
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{paddingBottom: '10px'}}>
           <OptionsForFilterList options={options} onButtonClick={handleAddToArray} />
         </AccordionDetails>
       </Accordion>

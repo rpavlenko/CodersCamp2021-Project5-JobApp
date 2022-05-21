@@ -25,7 +25,6 @@ export const FiltersHeader = (props: IProps) => {
       sx={{
         width: 1,
         border: '#ddd',
-        backgroundColor: showCategory ? '#eee' : '#fff',
         paddingLeft: '10px',
       }}>
       <CardActions>

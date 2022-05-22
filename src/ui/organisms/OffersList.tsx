@@ -6,7 +6,8 @@ import { IOfferData } from '../../api/models';
 interface IProps {
   offers: IOfferData[]
 }
-export const OffersList = ({offers}: IProps) => {
+
+export const OffersList = ({ offers }: IProps) => {
   const navigate = useNavigate();
 
   return (
@@ -16,12 +17,7 @@ export const OffersList = ({offers}: IProps) => {
           return (
             <ListItem
               key={id}
-              jobType={jobType}
-              jobTitle={jobTitle}
-              companyTitle={companyTitle}
-              buttonTitle={salary}
-              languageTitle={languageTitle}
-              logo={logo}
+              offer={offer}
               onClick={() => navigate(`/detail/${offer.id}`)}
             />
           );

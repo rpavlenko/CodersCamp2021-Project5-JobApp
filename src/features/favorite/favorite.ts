@@ -1,7 +1,8 @@
-import { createSlice, PayloadAction, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { IOfferData } from '../../api/models';
 
 export interface favoriteState {
-  favoriteList: {}[];
+  favoriteList: IOfferData[];
 }
 
 const initialState: favoriteState = {
@@ -17,10 +18,9 @@ export const favoriteSlice = createSlice({
     },
     removeFromFavorite: (state, action) => {
       state.favoriteList = state.favoriteList.filter(
-        (favorite) => favorite !== action.payload,
+        (favorite) => favorite.id !== action.payload.id,
       );
     },
-
     checkReducer: (state) => {
       console.log('Check reducer');
       state;

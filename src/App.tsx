@@ -11,17 +11,12 @@ import { NotFound } from './ui/Pages/NotFound';
 import './index.css';
 import { FavouriteOffersPage } from './ui/Pages/FavouriteOffersPage';
 import { useDispatch } from 'react-redux';
-import {
-  checkReducer,
-  addToFavorite,
-  removeFromFavorite,
-} from './features/favorite/favorite';
 import { useFetchOffersData } from './hooks/useFetchOffersData';
 
 export default function App() {
   const app = firebase.initializeApp(firebaseConfig);
   const auth = useAuth();
-  useFetchOffersData();
+  const fetchedData = useFetchOffersData();
   const dispatch = useDispatch();
 
   return (
@@ -30,7 +25,7 @@ export default function App() {
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/detail/:id" element={<OfferDetailPage />} />
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<MainPage fetchedData={fetchedData} />} />
         <Route path="/detail/:id/apply" element={<FormPage />} />
         <Route path="/favourite" element={<FavouriteOffersPage />} />
       </Routes>

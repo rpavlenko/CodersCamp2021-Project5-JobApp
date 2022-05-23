@@ -13,9 +13,8 @@ import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
 import { css } from '@emotion/react';
 import PulseLoader from 'react-spinners/PulseLoader';
-import { useFetchOffersData } from '../../hooks/useFetchOffersData';
 
-export const MainPage = () => {
+export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
   const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
@@ -24,7 +23,6 @@ export const MainPage = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const offers = useSelector((state: RootState) => state.offers.list);
-  const fetchedData = useFetchOffersData();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 

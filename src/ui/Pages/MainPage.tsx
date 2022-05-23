@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
-import { useFetchOffersData } from '../../hooks/useFetchOffersData';
 import { fetchOffers } from '../../features/offersList/offersList';
 import { Container, Modal } from '@mui/material';
 import { SearchInput } from '../atoms/Search/Search';
@@ -23,7 +22,6 @@ export const MainPage = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   const offers = useSelector((state: RootState) => state.offers.list);
   const fetchedData = useFetchOffersData();
   const dispatch = useDispatch();

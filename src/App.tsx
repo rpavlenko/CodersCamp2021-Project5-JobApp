@@ -10,21 +10,19 @@ import { FormPage } from './ui/Pages/FormPage';
 import { NotFound } from './ui/Pages/NotFound';
 import './index.css';
 import { FavouriteOffersPage } from './ui/Pages/FavouriteOffersPage';
-import { RootState } from './app/store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   checkReducer,
   addToFavorite,
   removeFromFavorite,
 } from './features/favorite/favorite';
+import { useFetchOffersData } from './hooks/useFetchOffersData';
 
 export default function App() {
   const app = firebase.initializeApp(firebaseConfig);
   const auth = useAuth();
-
-  const value = useSelector((state: RootState) => state.favorite.favoriteList);
+  useFetchOffersData();
   const dispatch = useDispatch();
-  console.log(value);
 
   return (
     <div className="App">

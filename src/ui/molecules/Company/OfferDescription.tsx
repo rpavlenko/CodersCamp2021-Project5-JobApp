@@ -1,9 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import { CompanyTitle } from '../../atoms/CompanyTitle/CompanyTitle';
 import { JobTitle } from '../../atoms/JobTitle/JobTitle';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { SalaryButton } from '../../atoms/Button/SalaryButton';
 import { LanguageButton } from '../../atoms/Button/LanguageButton';
+import { useState } from 'react';
+import { FavoriteIconButton } from '../../atoms/HeartIconButton/FavoriteIconButton';
+import { FavoriteBorderIconButton } from '../../atoms/HeartIconButton/FavoriteBorderIconButton';
 
 interface IOfferDescription {
   jobTitle: string;
@@ -11,15 +13,20 @@ interface IOfferDescription {
   jobType: string;
   buttonTitle: string;
   languageTitle: string;
+  onFavouriteClick: (e:any) => void;
+  heartClicked: boolean
 }
 
 export const OfferDescription = ({
-  jobTitle,
-  companyTitle,
-  jobType,
-  buttonTitle,
-  languageTitle,
-}: IOfferDescription) => {
+                                   jobTitle,
+                                   companyTitle,
+                                   jobType,
+                                   buttonTitle,
+                                   languageTitle,
+                                   onFavouriteClick,
+                                   heartClicked
+                                 }: IOfferDescription) => {
+
   return (
     <Box
       sx={{
@@ -77,18 +84,9 @@ export const OfferDescription = ({
         }}
       >
         <Typography mr={1}>{jobType}</Typography>
-        <FavoriteBorderIcon
-          sx={{
-            cursor: 'pointer',
-            '&:hover': {
-              fill: '#000',
-              transition: 'all 0.2s',
-            },
-          }}
-          color="primary"
-          fontSize="medium"
-        />
-        {/* <FavoriteIcon color="primary" /> */}
+        {heartClicked ?
+          <FavoriteIconButton onClick={onFavouriteClick} />
+          : <FavoriteBorderIconButton onClick={onFavouriteClick} />}
       </Box>
     </Box>
   );

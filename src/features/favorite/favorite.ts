@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface favoriteState {
-  favoriteList: {}[];
+  favoriteList: string[];
 }
 
 const initialState: favoriteState = {
-  favoriteList: [],
+  favoriteList: JSON.parse(localStorage.getItem('favourites') as string) || [],
 };
 
 export const favoriteSlice = createSlice({
@@ -14,15 +14,16 @@ export const favoriteSlice = createSlice({
   reducers: {
     addToFavorite: (state, action) => {
       state.favoriteList.push(action.payload);
+      localStorage.setItem('favourites', JSON.stringify([...state.favoriteList, action.payload]));
     },
     removeFromFavorite: (state, action) => {
-      state.favoriteList = state.favoriteList.filter(
-        (favorite) => favorite !== action.payload,
+      const result = state.favoriteList.filter(
+        (id) => id !== action.payload,
       );
+      localStorage.setItem('favourites', JSON.stringify(result));
+      state.favoriteList = result
     },
-
     checkReducer: (state) => {
-      console.log('Check reducer');
       state;
     },
   },

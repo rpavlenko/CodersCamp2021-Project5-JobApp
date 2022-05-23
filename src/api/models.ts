@@ -10,6 +10,7 @@ export interface IOffers {
 
 export interface IOfferData {
   id: number;
+  isFavourite?: boolean;
   companyTitle: string;
   languageTitle: string;
   logo: string;

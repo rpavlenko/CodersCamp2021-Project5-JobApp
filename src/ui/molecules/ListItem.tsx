@@ -22,20 +22,24 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
   } = offer;
   const dispatch = useDispatch();
 
-  const [heartClicked, setHeartClicked] = useState(false);
+  const favouritesFromLs = JSON.parse(localStorage.getItem('favourites') as string) || [];
+  const exists = favouritesFromLs.find((id: string) => id === offer.id.toString());
+  const [heartClicked, setHeartClicked] = useState(exists || offer.isFavourite ? true : false);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
     setHeartClicked((prevValue) => !prevValue);
     onFavouriteClick();
-    e.stopPropagation();
   };
 
   const onFavouriteClick = () => {
-    heartClicked ?
-      dispatch(removeFromFavorite(offer))
-      :  dispatch(addToFavorite(offer))
+    if (heartClicked) {
+      dispatch(removeFromFavorite(offer));
+    } else {
+      dispatch(addToFavorite(offer));
+      localStorage.setItem('favourites', JSON.stringify([...favouritesFromLs, offer.id]));
+    }
   };
-
   return (
     <Paper onClick={onClick}
            sx={{

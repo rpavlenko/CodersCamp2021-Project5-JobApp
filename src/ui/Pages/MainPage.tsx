@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -12,19 +12,26 @@ import { OffersList } from '../organisms/OffersList';
 import { FavouriteButton } from '../atoms/Button/FavouriteButton';
 import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
+import { css } from '@emotion/react';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 export const MainPage = () => {
   const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState('#ffc107');
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const offers = useSelector((state: RootState) => state.offers.list);
-  useFetchOffersData();
-
+  const fetchedData = useFetchOffersData();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    setLoading(false);
+  }, [fetchedData]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -38,7 +45,14 @@ export const MainPage = () => {
     }
   };
 
+  const override = css`
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  `;
+
   const getFilteredData = async (search: string) => {
+    setLoading(true);
     const data = await fetch(
       'https://628674b6f0e8f0bb7c167442.mockapi.io/api/v1/offers',
     )
@@ -50,8 +64,7 @@ export const MainPage = () => {
           );
         }),
       );
-
-    console.log(data);
+    setLoading(false);
     return data;
   };
 
@@ -77,6 +90,7 @@ export const MainPage = () => {
       </Container>
       <Container>
         <OffersTitle />
+        <PulseLoader color={color} loading={loading} css={override} size={30} />
         <OffersList offers={offers} />
       </Container>
       <Modal open={open} sx={{ overflow: 'scroll' }}>

@@ -11,7 +11,7 @@ interface IListItem {
   buttonTitle: string;
   languageTitle: string;
   logo: string;
-  onClick: () => void,
+  onClick: () => void;
 }
 
 export const ListItem = ({
@@ -20,10 +20,12 @@ export const ListItem = ({
   companyTitle,
   buttonTitle,
   languageTitle,
-  logo, onClick
+  logo,
+  onClick,
 }: IListItem) => {
   return (
-    <Paper onClick={onClick}
+    <Paper
+      onClick={onClick}
       sx={{
         display: 'flex',
         flexDirection: 'row',

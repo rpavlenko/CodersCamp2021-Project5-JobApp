@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IOfferData } from '../../api/models';
 
 interface IProps {
-  offers: IOfferData[]
+  offers: IOfferData[];
 }
 
 export const OffersList = ({ offers }: IProps) => {

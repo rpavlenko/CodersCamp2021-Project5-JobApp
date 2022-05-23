@@ -50,8 +50,6 @@ export const Header = ({ auth }) => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
-  console.log();
-
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">
@@ -150,7 +148,15 @@ export const Header = ({ auth }) => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="User Avatar" src="">
+                  <Avatar
+                    sx={{ cursor: 'pointer' }}
+                    alt="User Avatar"
+                    src={
+                      auth && auth.authentication.reloadUserInfo.photoUrl
+                        ? auth.authentication.reloadUserInfo.photoUrl
+                        : ''
+                    }
+                  >
                     {auth.authentication.displayName.slice(0, 1)}
                   </Avatar>
                 </IconButton>
@@ -187,7 +193,12 @@ export const Header = ({ auth }) => {
               </Menu>
             </Box>
           ) : (
-            <Avatar alt="User Avatar" src="" onClick={auth.login} />
+            <Avatar
+              sx={{ cursor: 'pointer' }}
+              src=""
+              alt="User Avatar"
+              onClick={auth.login}
+            />
           )}
         </Toolbar>
       </Container>

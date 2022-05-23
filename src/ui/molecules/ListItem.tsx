@@ -1,7 +1,10 @@
 import { OfferDescription } from './Company/OfferDescription';
 import { Paper } from '@mui/material';
 import { CompanyLogo } from '../atoms/CompanyLogo/CompanyLogo';
-import { addToFavorite, removeFromFavorite } from '../../features/favorite/favorite';
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from '../../features/favorite/favorite';
 import { useDispatch, useSelector } from 'react-redux';
 import { IOfferData } from '../../api/models';
 import { useState } from 'react';
@@ -9,7 +12,7 @@ import { RootState } from '../../app/store';
 
 interface IListItem {
   offer: IOfferData;
-  onClick: () => void,
+  onClick: () => void;
 }
 
 export const ListItem = ({ onClick, offer }: IListItem) => {
@@ -25,7 +28,9 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
   const favouriteOffers = useSelector((state: RootState) => {
     return state.favorite.favoriteList;
   });
-  const existsInFavourites = favouriteOffers.find((id: string) => id === offer.id.toString());
+  const existsInFavourites = favouriteOffers.find(
+    (id: string) => id === offer.id.toString(),
+  );
   const [heartClicked, setHeartClicked] = useState(!!existsInFavourites);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -42,25 +47,26 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
     }
   };
   return (
-    <Paper onClick={onClick}
-           sx={{
-             display: 'flex',
-             flexDirection: 'row',
-             alignItems: 'center',
-             padding: '10px',
-             marginBottom: '2px',
-             ':hover': {
-               cursor: 'pointer',
-               transition: 'all 0.5s',
-               boxShadow: '0px 2px 2px #ff5722',
-             },
-           }}
-           component={'a'}
+    <Paper
+      onClick={onClick}
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: '10px',
+        marginBottom: '10px',
+        ':hover': {
+          cursor: 'pointer',
+          transition: 'all 0.5s',
+          boxShadow: '0px 2px 2px #ff5722',
+        },
+      }}
+      component={'a'}
     >
       <CompanyLogo
         className={'className'}
         src={`${logo}`}
-        alt='company name alt'
+        alt="company name alt"
         width={60}
         height={34}
         style={{ height: '34px', objectFit: 'contain', minWidth: '60px' }}
@@ -71,6 +77,7 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
         jobType={jobType}
         buttonTitle={salary}
         languageTitle={languageTitle}
+        //@ts-ignore
         onFavouriteClick={handleClick}
         heartClicked={heartClicked}
       />

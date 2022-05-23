@@ -13,7 +13,7 @@ export const OffersList = ({ offers }: IProps) => {
   return (
     <Box sx={{ marginBottom: '30px' }}>
       {offers.map((offer) => {
-          const { id, jobType, jobTitle, companyTitle, salary, languageTitle, logo } = offer;
+          const { id } = offer;
           return (
             <ListItem
               key={id}

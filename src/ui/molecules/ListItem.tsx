@@ -2,9 +2,10 @@ import { OfferDescription } from './Company/OfferDescription';
 import { Paper } from '@mui/material';
 import { CompanyLogo } from '../atoms/CompanyLogo/CompanyLogo';
 import { addToFavorite, removeFromFavorite } from '../../features/favorite/favorite';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { IOfferData } from '../../api/models';
 import { useState } from 'react';
+import { RootState } from '../../app/store';
 
 interface IListItem {
   offer: IOfferData;
@@ -21,10 +22,11 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
     logo,
   } = offer;
   const dispatch = useDispatch();
-
-  const favouritesFromLs = JSON.parse(localStorage.getItem('favourites') as string) || [];
-  const exists = favouritesFromLs.find((id: string) => id === offer.id.toString());
-  const [heartClicked, setHeartClicked] = useState(exists || offer.isFavourite ? true : false);
+  const favouriteOffers = useSelector((state: RootState) => {
+    return state.favorite.favoriteList;
+  });
+  const existsInFavourites = favouriteOffers.find((id: string) => id === offer.id.toString());
+  const [heartClicked, setHeartClicked] = useState(!!existsInFavourites);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
@@ -34,10 +36,9 @@ export const ListItem = ({ onClick, offer }: IListItem) => {
 
   const onFavouriteClick = () => {
     if (heartClicked) {
-      dispatch(removeFromFavorite(offer));
+      dispatch(removeFromFavorite(offer.id));
     } else {
-      dispatch(addToFavorite(offer));
-      localStorage.setItem('favourites', JSON.stringify([...favouritesFromLs, offer.id]));
+      dispatch(addToFavorite(offer.id));
     }
   };
   return (

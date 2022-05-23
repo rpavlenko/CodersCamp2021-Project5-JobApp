@@ -6,7 +6,6 @@ import { FavouriteButton } from '../atoms/Button/FavouriteButton';
 import { useState } from 'react';
 import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
-import { useFetchOffersData } from '../../hooks/useFetchOffersData';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 
@@ -14,7 +13,6 @@ export const MainPage = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  useFetchOffersData();
   const offers = useSelector((state: RootState) => state.offers.list);
 
   return (

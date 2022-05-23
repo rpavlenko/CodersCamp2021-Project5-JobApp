@@ -27,19 +27,12 @@ export const SearchInput = ({
         width: '100%',
         height: '42px',
         '&:hover': {
-          bgcolor: 'primary.dark',
+          backgroundColor: '#eee',
         },
       }}
     >
       <InputBase
-        sx={[
-          { ml: 1, flex: 1 },
-          {
-            '&:hover': {
-              bgcolor: 'primary.dark',
-            },
-          },
-        ]}
+        sx={{ ml: 1, flex: 1 }}
         placeholder="Wpisz, aby wyszukać"
         inputProps={{ 'aria-label': 'Wpisz, aby wyszukać' }}
         value={searchTerm}

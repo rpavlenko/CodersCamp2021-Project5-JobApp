@@ -13,6 +13,7 @@ import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
 import { css } from '@emotion/react';
 import PulseLoader from 'react-spinners/PulseLoader';
+import { useFetchOffersData } from '../../hooks/useFetchOffersData';
 
 export const MainPage = () => {
   const [open, setOpen] = useState(false);

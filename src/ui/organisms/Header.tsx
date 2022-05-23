@@ -50,8 +50,6 @@ export const Header = ({ auth }) => {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
 
-  // console.log(auth && auth.authentication.reloadUserInfo.photoUrl);
-
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">

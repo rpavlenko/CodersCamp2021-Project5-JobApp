@@ -104,8 +104,7 @@ User is directed to this page from Main page by clicking on each offer. Here all
 
 ### Apply Page
 
-This page gives possibility to apply for a job on form submit.
-&nbsp;
+This page gives possibility to apply for a job on form submit.  
 ![](./src/assets/readme/apply.png 'Apply page')
 
 ### 404 Error Page

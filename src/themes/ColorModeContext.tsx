@@ -43,7 +43,7 @@ export default function ToggleColorMode({
                                         }: {
   children: React.ReactNode;
 }) {
-  const initialColorMode = JSON.parse(localStorage.getItem('colorMode') as string);
+  const initialColorMode = JSON.parse(localStorage.getItem('colorMode') as string) || 'light';
 
   const [mode, setMode] = React.useState<'light' | 'dark'>(initialColorMode);
   const colorMode = React.useMemo(

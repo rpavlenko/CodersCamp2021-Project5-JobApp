@@ -17,12 +17,16 @@ export const FavouriteButton = () => {
                   borderColor: '#ddd',
                   textTransform: 'none',
                   marginTop: '15px',
-                  marginBottom: '20px',
+                  marginBottom: '15px',
                   '&:hover': {
                     backgroundColor: 'black',
                     color: '#ddd',
                     borderColor: '#ddd',
                   },
+                  '@media (min-width: 768px)': {
+                    width: '48%',
+                    marginBottom: '0px',
+                  }
                 }}>
       Twoje ulubione oferty
     </BaseButton>

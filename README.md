@@ -70,14 +70,17 @@ Main page is a core of application. All job offers are shown there. You can chec
 Navigation is simplified and icon-based which increase accessability. It is available only on hamburger click on mobile version. For desktop version navigation bar always visible.
 
 Main page:
+
 ![](./src/assets/readme/main.png 'Main page')
 
 Navigation:
+
 ![](./src/assets/readme/main.png 'Main page')
 
 &nbsp;
 
 You can add offer to favourite using 'like' button:
+
 ![](./src/assets/readme/like.png 'Favourite offer - like button')
 
 ### Authorisation

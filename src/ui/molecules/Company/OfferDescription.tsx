@@ -12,20 +12,19 @@ interface IOfferDescription {
   jobType: string;
   buttonTitle: string;
   languageTitle: string;
-  onFavouriteClick: (e:any) => void;
-  heartClicked: boolean
+  onFavouriteClick: (e: any) => void;
+  heartClicked: boolean;
 }
 
 export const OfferDescription = ({
-                                   jobTitle,
-                                   companyTitle,
-                                   jobType,
-                                   buttonTitle,
-                                   languageTitle,
-                                   onFavouriteClick,
-                                   heartClicked
-                                 }: IOfferDescription) => {
-
+  jobTitle,
+  companyTitle,
+  jobType,
+  buttonTitle,
+  languageTitle,
+  onFavouriteClick,
+  heartClicked,
+}: IOfferDescription) => {
   return (
     <Box
       sx={{
@@ -45,7 +44,7 @@ export const OfferDescription = ({
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          minWidth: '200px',
+          minWidth: '250px',
         }}
       >
         <JobTitle title={jobTitle} />
@@ -83,9 +82,11 @@ export const OfferDescription = ({
         }}
       >
         <Typography mr={1}>{jobType}</Typography>
-        {heartClicked ?
+        {heartClicked ? (
           <FavoriteIconButton onClick={onFavouriteClick} />
-          : <FavoriteBorderIconButton onClick={onFavouriteClick} />}
+        ) : (
+          <FavoriteBorderIconButton onClick={onFavouriteClick} />
+        )}
       </Box>
     </Box>
   );

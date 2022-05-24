@@ -9,10 +9,10 @@ export const MessageInput = () => {
   return (
     <Box sx={{ position: 'relative' }}>
       <TextField
-        label='Wiadomość do rekrutera'
-        color='primary'
-        variant='outlined'
-        type='text'
+        label="Wiadomość do rekrutera"
+        color="secondary"
+        variant="outlined"
+        type="text"
         inputRef={textInput}
         required
         multiline
@@ -25,12 +25,12 @@ export const MessageInput = () => {
       />
       <Button
         onClick={() => {
-          if( textInput.current !== null) {
+          if (textInput.current !== null) {
             textInput.current.value = '';
           }
         }}
         size={'small'}
-        color='secondary'
+        color="secondary"
         sx={{
           position: 'absolute',
           right: '20px',

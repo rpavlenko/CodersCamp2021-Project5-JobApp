@@ -69,8 +69,7 @@ Main page is a core of application. All job offers are shown there. You can chec
 
 Navigation is simplified and icon-based which increase accessability. It is available only on hamburger click on mobile version. For desktop version navigation bar always visible.
 
-Main page:
-&nbsp;
+Main page:  
 ![](./src/assets/readme/main.png 'Main page')
 
 Navigation:

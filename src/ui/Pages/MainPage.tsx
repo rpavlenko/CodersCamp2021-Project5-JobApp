@@ -13,6 +13,8 @@ import { FilterPage } from './FilterPage';
 import { OffersTitle } from '../atoms/OffersTitle/OffersTitle';
 import { css } from '@emotion/react';
 import PulseLoader from 'react-spinners/PulseLoader';
+import { NoOffersFound } from '../atoms/NoOffersFound/NoOffersFound';
+import { getOffersData } from '../../hooks/useFetchOffersData';
 
 export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
   const [open, setOpen] = useState(false);
@@ -38,6 +40,7 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
       dispatch(fetchOffers(await getFilteredData(search)));
       setSearchParams({ search });
     } else {
+      getOffersData(dispatch);
       setSearchParams({});
     }
   };
@@ -67,7 +70,7 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
 
   return (
     <>
-      <Box sx={{ backgroundColor: 'black'}}>
+      <Box sx={{ backgroundColor: 'black' }}>
         <Container
           sx={{
             paddingTop: '30px',
@@ -86,13 +89,13 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
         </Container>
       </Box>
       <Container>
-        <OffersTitle />
+        {offers.length > 0 ? <OffersTitle /> : <NoOffersFound />}
         <PulseLoader color={color} loading={loading} css={override} size={30} />
         <OffersList offers={offers} />
       </Container>
-        <Modal open={open} sx={{ overflow: 'scroll'}}>
-          <FilterPage onClose={handleClose} />
-        </Modal>
+      <Modal open={open} sx={{ overflow: 'scroll' }}>
+        <FilterPage onClose={handleClose} />
+      </Modal>
     </>
   );
 };

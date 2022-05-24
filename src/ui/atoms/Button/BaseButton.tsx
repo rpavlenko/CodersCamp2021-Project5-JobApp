@@ -12,15 +12,15 @@ export interface IButton {
 }
 
 export const BaseButton = ({
-  children,
-  variant,
-  color,
-  size,
-  startIcon,
-  sx,
-  fullWidth,
-  onClick,
-}: IButton) => {
+                             children,
+                             variant,
+                             color,
+                             size,
+                             startIcon,
+                             sx,
+                             fullWidth,
+                             onClick,
+                           }: IButton) => {
   return (
     <Button
       variant={variant}

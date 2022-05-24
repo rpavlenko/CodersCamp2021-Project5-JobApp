@@ -3,7 +3,6 @@ import { CompanyTitle } from '../../atoms/CompanyTitle/CompanyTitle';
 import { JobTitle } from '../../atoms/JobTitle/JobTitle';
 import { SalaryButton } from '../../atoms/Button/SalaryButton';
 import { LanguageButton } from '../../atoms/Button/LanguageButton';
-import { useState } from 'react';
 import { FavoriteIconButton } from '../../atoms/HeartIconButton/FavoriteIconButton';
 import { FavoriteBorderIconButton } from '../../atoms/HeartIconButton/FavoriteBorderIconButton';
 

@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { fetchOffers } from '../../features/offersList/offersList';
-import { Container, Modal } from '@mui/material';
+import { Box, Container, Modal } from '@mui/material';
 import { SearchInput } from '../atoms/Search/Search';
 import { FilterButton } from '../atoms/Button/FilterButton';
 import { OffersList } from '../organisms/OffersList';
@@ -67,7 +67,7 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
 
   return (
     <>
-      <Container maxWidth="xl" sx={{ backgroundColor: 'black' }}>
+      <Box sx={{ backgroundColor: 'black'}}>
         <Container
           sx={{
             paddingTop: '30px',
@@ -84,15 +84,15 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
           <FilterButton onClick={handleOpen} />
           <FavouriteButton />
         </Container>
-      </Container>
+      </Box>
       <Container>
         <OffersTitle />
         <PulseLoader color={color} loading={loading} css={override} size={30} />
         <OffersList offers={offers} />
       </Container>
-      <Modal open={open} sx={{ overflow: 'scroll' }}>
-        <FilterPage onClose={handleClose} />
-      </Modal>
+        <Modal open={open} sx={{ overflow: 'scroll'}}>
+          <FilterPage onClose={handleClose} />
+        </Modal>
     </>
   );
 };

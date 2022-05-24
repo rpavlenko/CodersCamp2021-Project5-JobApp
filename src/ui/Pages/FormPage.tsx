@@ -10,9 +10,8 @@ import AppBar from '@mui/material/AppBar';
 
 export const FormPage = () => {
   let navigate = useNavigate();
-  //TODO Dynamic ID
   const handleClick = () => {
-    navigate('/detail/:id/');
+    navigate('/');
   };
   return (
     <>
@@ -27,7 +26,7 @@ export const FormPage = () => {
       </Container>
       <AppBar position='sticky' sx={{ top: 'auto', bottom: 0 }}>
         <ApplyButton onClick={handleClick}
-                     sx={{ width: '100%' }}/>
+                     sx={{ width: '100%' }} />
       </AppBar>
     </>
   );

@@ -10,7 +10,7 @@ export const BackIconButton = () => {
 
   return (
     <IconButton aria-label='back'
-                sx={{ padding: 0, marginTop: '15px', marginBottom: '10px' }}>
+                sx={{ padding: 0, marginTop: '30px', marginBottom: '10px' }}>
       <ArrowCircleLeftOutlinedIcon onClick={handleBackClick} fontSize={'large'} />
     </IconButton>
   )

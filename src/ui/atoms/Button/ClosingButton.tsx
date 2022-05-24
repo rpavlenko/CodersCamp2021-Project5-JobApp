@@ -8,8 +8,8 @@ interface IProps {
 export const ClosingButton = (props: IProps) => {
   const { onClose } = props;
   return (
-    <IconButton aria-label='close' sx={{paddingLeft: '20px'}}>
-      <CloseIcon onClick={onClose} />
+    <IconButton onClick={onClose} aria-label='close' sx={{padding: '20px'}}>
+      <CloseIcon />
     </IconButton>
   );
 };

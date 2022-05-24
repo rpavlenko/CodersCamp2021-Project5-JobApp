@@ -27,6 +27,9 @@ export const FilterButton = (props: IProps) => {
           backgroundColor: 'black',
           color: '#ddd',
           borderColor: '#ddd',
+        },
+        '@media (min-width: 768px)': {
+          width: '48%',
         }
       }}>
       Filtry

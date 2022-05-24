@@ -21,7 +21,7 @@ export const NotFound = () => {
           sx={{ marginBottom: '20px', bgcolor: 'secondary.main' }}
           onClick={handleClick}
         >
-          Wrócić na główną!
+          Wróć na stronę główną!
         </BaseButton>
       </Container>
     </div>

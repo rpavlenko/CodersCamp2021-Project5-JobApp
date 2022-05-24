@@ -2,13 +2,13 @@ import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import { BaseButton } from './BaseButton';
 
 interface IProps {
-  onClick: () => void
+  onClick: () => void;
 }
 
 export const FilterButton = (props: IProps) => {
- const handleClick = () => {
-   props.onClick();
-  }
+  const handleClick = () => {
+    props.onClick();
+  };
 
   return (
     <BaseButton
@@ -27,11 +27,13 @@ export const FilterButton = (props: IProps) => {
           backgroundColor: 'black',
           color: '#ddd',
           borderColor: '#ddd',
-        }
-      }}>
+        },
+        '@media (min-width: 768px)': {
+          width: '48%',
+        },
+      }}
+    >
       Filtry
     </BaseButton>
   );
-}
-;
-
+};

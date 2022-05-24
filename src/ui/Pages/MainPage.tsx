@@ -84,8 +84,18 @@ export const MainPage = ({ fetchedData }: { fetchedData: boolean }) => {
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
           />
-          <FilterButton onClick={handleOpen} />
-          <FavouriteButton />
+          <Box
+            sx={{
+              '@media (min-width: 768px)': {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              },
+            }}
+          >
+            <FilterButton onClick={handleOpen} />
+            <FavouriteButton />
+          </Box>
         </Container>
       </Box>
       <Container>

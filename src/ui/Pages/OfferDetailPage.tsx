@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { DetailHeader } from '../organisms/DetailHeader';
 import Container from '@mui/material/Container';
 import { BottomApplyFofAnOffer } from '../molecules/BottomApplyFofAnOffer/BottomApplyFofAnOffer';
@@ -45,7 +45,7 @@ export const OfferDetailPage = () => {
           )}
         </Box>
       </Container>
-      <AppBar position="sticky" sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position='sticky' sx={{ top: 'auto', bottom: 0 }}>
         <Container>
           <BottomApplyFofAnOffer onClick={handleClick} />
         </Container>

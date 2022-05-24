@@ -70,48 +70,27 @@ Main page is a core of application. All job offers are shown there. You can chec
 Navigation is simplified and icon-based which increase accessability. It is available only on hamburger click on mobile version. For desktop version navigation bar always visible.
 
 Main page:
-<<<<<<< HEAD
-
 ![](./src/assets/readme/main.png 'Main page')
 
 Navigation:
-
-=======
 ![](./src/assets/readme/main.png 'Main page')
-
-Navigation:
-
-> > > > > > > ea1d9b0c79efb05a23ad3fcd1f09a5f50be7b518
-> > > > > > > ![](./src/assets/readme/navigation.png 'Main page - navigation')
 
 &nbsp;
 
 You can add offer to favourite using 'like' button:
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > ea1d9b0c79efb05a23ad3fcd1f09a5f50be7b518
-> > > > > > > ![](./src/assets/readme/like.png 'Favourite offer - like button')
+![](./src/assets/readme/like.png 'Favourite offer - like button')
 
 ### Authorisation
 
 You can authorise to your account using Google account. Click on user image at the top right corner, and Google popup will show up, where you will be able to sign in:
 
 Before:
-<<<<<<< HEAD
 
 ![](./src/assets/readme/authorisation.png 'Authorisation')
 
 After:
 
-=======
-![](./src/assets/readme/authorisation.png 'Authorisation')
-
-After:
-
-> > > > > > > ea1d9b0c79efb05a23ad3fcd1f09a5f50be7b518
-> > > > > > > ![](./src/assets/readme/after-authorisation.png 'After Authorisation')
+![](./src/assets/readme/after-authorisation.png 'After Authorisation')
 
 ### Favourite offers Page
 

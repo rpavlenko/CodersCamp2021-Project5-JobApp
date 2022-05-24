@@ -69,34 +69,31 @@ Main page is a core of application. All job offers are shown there. You can chec
 
 Navigation is simplified and icon-based which increase accessability. It is available only on hamburger click on mobile version. For desktop version navigation bar always visible.
 
-Main page:  
+Main page:
+
 ![](./src/assets/readme/main.png 'Main page')
 
 Navigation:
-&nbsp;
+
 ![](./src/assets/readme/main.png 'Main page')
 
-&nbsp;
 You can add offer to favourite using 'like' button:
-&nbsp;
+
 ![](./src/assets/readme/like.png 'Favourite offer - like button')
 
 ### Authorisation
 
 You can authorise to your account using Google account. Click on user image at the top right corner, and Google popup will show up, where you will be able to sign in:
 
-Before:
-&nbsp;
+Before:  
 ![](./src/assets/readme/authorisation.png 'Authorisation')
 
-After:
-&nbsp;
+After:  
 ![](./src/assets/readme/after-authorisation.png 'After Authorisation')
 
 ### Favourite offers Page
 
-On this page user can check all offers added to favourite:
-
+On this page user can check all offers added to favourite:  
 ![](./src/assets/readme/favourite-page.png 'Favourite page')
 
 ### Details Page
@@ -113,14 +110,13 @@ This page gives possibility to apply for a job on form submit.
 
 ### 404 Error Page
 
-When page cannot be found in our App user will see below view:
+When page cannot be found in our App user will see below view:  
 &nbsp;
 ![](./src/assets/readme/404.png '404 Error page')
 
 ### Dark Mode
 
-Yes, we have dark mode:
-&nbsp;
+Yes, we have dark mode:  
 ![](./src/assets/readme/dark.png 'Dark')
 
 ## Technologies

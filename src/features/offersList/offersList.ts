@@ -14,7 +14,6 @@ export const offersListSlice = createSlice({
   initialState,
   reducers: {
     fetchOffers: (state, action) => {
-      console.log({state, action})
       state.list = action.payload
     },
   },

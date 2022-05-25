@@ -45,6 +45,9 @@ export const OfferDescription = ({
           display: 'flex',
           flexDirection: 'column',
           minWidth: '250px',
+          '@media (max-width: 400px)': {
+            minWidth: '200px',
+          },
         }}
       >
         <JobTitle title={jobTitle} />

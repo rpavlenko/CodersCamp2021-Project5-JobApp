@@ -8,13 +8,16 @@ export const Footer = () => {
       p={2}
       sx={{
         bgcolor: 'primary.main',
-        display: 'flex',
-        flexDirection: 'column',
         marginTop: 'auto',
       }}
     >
       <Container>
-        <Typography mb={2} variant='h5'>
+        <Typography mb={2} variant='h5' sx={{
+          '@media (min-width: 768px)': {
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }
+        }}>
           Kontakt:
         </Typography>
         <Box
@@ -24,6 +27,9 @@ export const Footer = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
+            '@media (min-width: 768px)': {
+              justifyContent: 'flex-end',
+            },
           }}
         >
           <Box
@@ -34,7 +40,7 @@ export const Footer = () => {
             }}
           >
             <MailIcon />
-            <Typography component='span' ml={1}>
+            <Typography component='span' ml={1} sx={{ paddingRight: '10px' }}>
               Napisz:
             </Typography>
           </Box>
@@ -48,6 +54,9 @@ export const Footer = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             flexWrap: 'wrap',
+            '@media (min-width: 768px)': {
+              justifyContent: 'flex-end',
+            },
           }}
         >
           <Box
@@ -58,7 +67,7 @@ export const Footer = () => {
             }}
           >
             <LocalPhoneIcon />
-            <Typography component='span' ml={1}>
+            <Typography component='span' ml={1} sx={{ paddingRight: '10px' }}>
               Zadzwoń:
             </Typography>
           </Box>
